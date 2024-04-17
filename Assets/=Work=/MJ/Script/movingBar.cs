@@ -1,8 +1,3 @@
-/*
-작성자 : 손민지
-작성일 : 2024.04.06
-*/
-
 using UnityEngine;
 
 public class MovingBarController : MonoBehaviour
@@ -28,7 +23,7 @@ public class MovingBarController : MonoBehaviour
         movingBar.position = initialPosition.position; // 초기 위치 설정
     }
 
-    void Update()
+    public void Update()
     {
         // 현재 방향의 목표 지점 설정
         Vector3 targetMarker = movingToEnd ? endMarker : startMarker;
@@ -47,5 +42,24 @@ public class MovingBarController : MonoBehaviour
         {
             movingToEnd = !movingToEnd;
         }
+    }
+
+    // 오른쪽 컨트롤을 클릭하여 이동을 일시적으로 멈춥니다.
+    private void OnMouseDown()
+    {
+        // 클릭된 오브젝트의 이름이 right_ctrl이면 이동을 멈춥니다.
+        if (gameObject.name == "right_ctrl")
+        {   
+            Debug.LogError("right_ctrl 클릭");
+            StartCoroutine(PauseMovement(1f)); // 0.1초 동안 이동을 멈춥니다.
+        }
+    }
+
+    // 이동을 멈춘 후 재개합니다.
+    private System.Collections.IEnumerator PauseMovement(float pauseTime)
+    {
+        Time.timeScale = 0f; // 시간 흐름을 멈춥니다.
+        yield return new WaitForSecondsRealtime(pauseTime); // 지정된 시간만큼 대기합니다.
+        Time.timeScale = 1f; // 시간 흐름을 다시 시작합니다.
     }
 }
