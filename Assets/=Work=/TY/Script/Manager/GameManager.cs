@@ -11,6 +11,7 @@ namespace Game
     //씬 업데이트도 Managers.Game.changeScene(index); 로 접근
     //클리어 메소드에 interaction을 막는 코드 추가해야함. 이것도 Init할 때 초기화해주기.
     //게임이 끝나고 start 씬으로 로드 될 때, clearList에 대한 접근이 불가능해지므로, 참고해서 수정해야함.
+    //각씬마다 개별로 시뮬레이터를 가지고 있으므로, 처음 시작할 때, 씬이 조절될 때마다 찾아줘야 함.
 
     public class GameManager
     {
@@ -37,8 +38,9 @@ namespace Game
             MicrowaveCheck = false;
             TelePhoneCheck = false;
 
-            //시뮬레이터를 player로 설정해놨음. 추후에 변경해야함.
-            player = GameObject.Find("XR Origin (XR Rig)");
+            //player 오브젝트 찾는 부분
+            Managers.Game.FindPlayer();
+            Managers.Game.StartPlayerSetting();
         }
 
         public void changeScene(int index){
@@ -63,19 +65,24 @@ namespace Game
             {   
                 //0으로 전환 == Start 씬으로 돌아감. 초기화 필요
                 case 0:
+                    Managers.Game.FindPlayer();
                     Managers.Scenario.Init();
                     Managers.Game.Init();
                     Managers.Game.StartPlayerSetting();
                     break;
                 case 1:
+                    Managers.Game.FindPlayer();
                     Managers.Game.LoadPlayer();
                     Managers.Game.ShowClearList();
                     break;
                 case 2:
+                    Managers.Game.FindPlayer();
                     break;
                 case 3:
+                    Managers.Game.FindPlayer();
                     break;
                 case 4:
+                    Managers.Game.FindPlayer();
                     break;
             }
         }
@@ -142,18 +149,30 @@ namespace Game
         //StartPoint 지정하기
         private void StartPlayerSetting(){
             if(startPoint == null){
-                GameObject.Find("StartPoint");
+                startPoint = GameObject.Find("StartPoint");
             }
             player.transform.position = startPoint.transform.position;
             player.transform.rotation = Quaternion.Euler(startPoint.transform.rotation.eulerAngles);
+            Debug.Log("스타트 포인트 세팅 완료");
         }
 
         private void HousePlayerSetting(){
             if(housePoint == null){
-                GameObject.Find("HousePoint");
+                housePoint = GameObject.Find("HousePoint");
             }
             player.transform.position = housePoint.transform.position;
             player.transform.rotation = Quaternion.Euler(housePoint.transform.rotation.eulerAngles);
+            Debug.Log("하우스 포인트 세팅 완료");
+        }
+
+        private void FindPlayer(){
+            //시뮬레이터를 player로 설정해놨음. 추후에 변경해야함.
+            player = GameObject.Find("XR Origin (XR Rig)");
+        }
+
+        //플레이어의 회전 및 이동을 잠그는 메소드(1을 제외한 씬에서 사용될 예정)
+        private void LockPlayerMovement(){
+
         }
 
     }
