@@ -20,9 +20,6 @@ public class Managers : Game.Helpers.Singleton<Managers>
     void Start()
     {
         DontDestroyOnLoad(this);
-
-        Game.Init();
-        Scenario.Init();
     }
 
 }

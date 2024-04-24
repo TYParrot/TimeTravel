@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 namespace Game
 {
@@ -10,8 +11,7 @@ namespace Game
     //게임이 클리어 되었을 시 ex) Managers.Game.ClearRadio(true); 호출하면 클리어로 업데이트
     //씬 업데이트도 Managers.Game.changeScene(index); 로 접근
     //클리어 메소드에 interaction을 막는 코드 추가해야함. 이것도 Init할 때 초기화해주기.
-    //게임이 끝나고 start 씬으로 로드 될 때, clearList에 대한 접근이 불가능해지므로, 참고해서 수정해야함.
-    //각씬마다 개별로 시뮬레이터를 가지고 있으므로, 처음 시작할 때, 씬이 조절될 때마다 찾아줘야 함.
+    //각 씬의 Manager가 있다면 Start될 때, Managers.Game.SceneSetting() 호출 필요.
 
     public class GameManager
     {
@@ -38,14 +38,16 @@ namespace Game
             MicrowaveCheck = false;
             TelePhoneCheck = false;
 
-            //player 오브젝트 찾는 부분
+
             Managers.Game.FindPlayer();
+            Managers.Scenario.Init();
             Managers.Game.StartPlayerSetting();
         }
 
         public void changeScene(int index){
 
             beforeIndex = SceneManager.GetActiveScene().buildIndex;
+            currentIndex = index;
 
             //플레이어 위치 저장은 씬 전환 전 일어나야함.
             if(index > 1){
@@ -53,36 +55,32 @@ namespace Game
             }
 
             SceneManager.LoadScene(index);
-            currentIndex = SceneManager.GetActiveScene().buildIndex;
+        }
 
-            //Player 세팅은 씬 전환 후 일어나야함.
-            //게임 재시작시에만 실행되는 부분
-            if(beforeIndex == 0 && currentIndex == 1){
-                Managers.Scenario.Init();
-            }
-
+        public void SceneSetting(){
             switch (currentIndex)
-            {   
-                //0으로 전환 == Start 씬으로 돌아감. 초기화 필요
+            {
                 case 0:
-                    Managers.Game.FindPlayer();
-                    Managers.Scenario.Init();
                     Managers.Game.Init();
-                    Managers.Game.StartPlayerSetting();
+                    Debug.Log("switch씬 0번 호출");
                     break;
                 case 1:
                     Managers.Game.FindPlayer();
                     Managers.Game.LoadPlayer();
                     Managers.Game.ShowClearList();
+                    Debug.Log("swtich 1번 호출");
                     break;
                 case 2:
                     Managers.Game.FindPlayer();
+                    Managers.Game.LockPlayerMovement();
                     break;
                 case 3:
                     Managers.Game.FindPlayer();
+                    Managers.Game.LockPlayerMovement();
                     break;
                 case 4:
                     Managers.Game.FindPlayer();
+                    Managers.Game.LockPlayerMovement();
                     break;
             }
         }
@@ -140,9 +138,11 @@ namespace Game
         private void LoadPlayer(){
             if(beforeIndex == 0){
                 HousePlayerSetting();
+                Debug.Log("houseplayersetting 호출 완료");
             }else{
                 player.transform.position = playerPos;
                 player.transform.rotation = Quaternion.Euler(playerRot);
+                Debug.Log("플레이어 로드 완료");
             }
         }
 
@@ -168,6 +168,7 @@ namespace Game
         private void FindPlayer(){
             //시뮬레이터를 player로 설정해놨음. 추후에 변경해야함.
             player = GameObject.Find("XR Origin (XR Rig)");
+            Debug.Log("플레이어 확인");
         }
 
         //플레이어의 회전 및 이동을 잠그는 메소드(1을 제외한 씬에서 사용될 예정)
