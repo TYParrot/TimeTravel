@@ -16,12 +16,10 @@ public class Managers : Game.Helpers.Singleton<Managers>
     public static GameManager Game => Instance._game;
     public static ScenarioManager Scenario => Instance._scenario;
 
-    public GameObject xrSimulator;
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this);
-        DontDestroyOnLoad(xrSimulator);
 
         Game.Init();
         Scenario.Init();

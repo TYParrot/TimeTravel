@@ -124,7 +124,7 @@ public class UI_Scenario : MonoBehaviour
             msg.SetActive(true); // 메시지 활성화
 
             // 재생 후 대기
-            yield return new WaitForSeconds(4.0f); // 재생 시간
+            yield return new WaitForSeconds(5.0f); // 재생 시간
 
             msg.SetActive(false); // 메시지 비활성화
         }

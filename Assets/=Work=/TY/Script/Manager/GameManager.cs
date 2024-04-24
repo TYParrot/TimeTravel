@@ -56,7 +56,6 @@ namespace Game
             //Player 세팅은 씬 전환 후 일어나야함.
             //게임 재시작시에만 실행되는 부분
             if(beforeIndex == 0 && currentIndex == 1){
-                HousePlayerSetting();
                 Managers.Scenario.Init();
             }
 
@@ -132,8 +131,12 @@ namespace Game
         }
 
         private void LoadPlayer(){
-            player.transform.position = playerPos;
-            player.transform.rotation = Quaternion.Euler(playerRot);
+            if(beforeIndex == 0){
+                HousePlayerSetting();
+            }else{
+                player.transform.position = playerPos;
+                player.transform.rotation = Quaternion.Euler(playerRot);
+            }
         }
 
         //StartPoint 지정하기
