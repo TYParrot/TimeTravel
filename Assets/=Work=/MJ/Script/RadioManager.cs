@@ -35,7 +35,8 @@ public class RadioManager : MonoBehaviour
 
     // 현재 스테이지를 증가시키고 콘솔에 출력하는 메서드
     public void IncrementStage()
-    {
+    {   
+        ///여기에 1초 딜레이 넣어줘
         currentStage++;
         Debug.Log("현재 스테이지 번호: " + currentStage);
 
