@@ -5,34 +5,30 @@ public class MovingBarController : MonoBehaviour
     public Transform startBar;
     public Transform endBar;
     public Transform movingBar;
-    // public Transform initialPosition;
-    public float speed = 1.0f;
+    public Transform[] targetBars; // targetBar 배열로 변경합니다.
+    public Transform[] StageBalls;
+
+    public float speed = 8.0f;
     private Vector3 startMarker;
     private Vector3 endMarker;
     private bool movingToEnd = true;
-    private GameObject[] targetBarStages;
+    private int stage; 
+    private bool movementPaused = false; 
 
     private void Start()
     {
         startMarker = startBar.position;
         endMarker = endBar.position;
-        // movingBar.position = initialPosition.position;
-
-        // Target bar stages 초기화
-        targetBarStages = new GameObject[3];
-        for (int i = 0; i < targetBarStages.Length; i++)
-        {
-
-            targetBarStages[i] = GameObject.Find("target_bar_stage" + (i + 1));
-        }
     }
 
     public void Update()
     {
-        // 키보드 "K"를 누르고 있는 동안 이동을 멈춥니다.
+        stage = RadioManager.Instance.GetCurrentStage(); 
+        ShowTargetBarStage(stage);
+        ShowStageBall(stage);
+        
         if (!IsMovementPaused())
         {
-            Debug.Log("k 클릭");
             Vector3 targetMarker = movingToEnd ? endMarker : startMarker;
             Vector3 direction = targetMarker - movingBar.position;
             float step = speed * Time.deltaTime;
@@ -43,14 +39,28 @@ public class MovingBarController : MonoBehaviour
             {
                 movingToEnd = !movingToEnd;
             }
-        }
 
-        // 스테이지 변경 이벤트 핸들러 호출
-        int stage = RadioManager.Instance.GetCurrentStage();
-        HandleStageChanged(stage);
+        }
+        else
+        {
+            if (!movementPaused)
+            {
+                Debug.Log("k 클릭");
+
+                // stage에 따라 올바른 targetBar를 선택합니다.
+                int targetIndex = (stage - 1) % targetBars.Length;
+                Transform targetBar = targetBars[targetIndex];
+
+                if (Vector3.Distance(movingBar.position, targetBar.position) < 0.5f)
+                {
+                    HandleStageChanged(stage);
+                    RadioManager.Instance.IncrementStage();
+                    // movementPaused = true; 
+                }
+            }
+        }
     }
 
-    // 키보드 "K"를 누르고 있는지 확인하는 메서드
     private bool IsMovementPaused()
     {
         return Input.GetKey(KeyCode.K);
@@ -58,8 +68,9 @@ public class MovingBarController : MonoBehaviour
 
     private void HandleStageChanged(int stage)
     {
-        Debug.Log("무빙바 스테이지가 변경되었습니다. 현재 스테이지: " + stage);
+        Debug.Log("올바른 위치에서 멈췄습니다. 현재 스테이지: " + stage);
         ShowTargetBarStage(stage);
+        ShowStageBall(stage);
     }
 
     private System.Collections.IEnumerator PauseMovement(float pauseTime)
@@ -71,9 +82,37 @@ public class MovingBarController : MonoBehaviour
 
     public void ShowTargetBarStage(int stage)
     {
-        for (int i = 0; i < targetBarStages.Length; i++)
+        // 모든 타깃 바를 숨깁니다.
+        foreach (Transform targetBar in targetBars)
         {
-            targetBarStages[i].SetActive(i == (stage - 1));
+            targetBar.gameObject.SetActive(false);
         }
+
+        // 현재 스테이지에 맞는 타깃 바를 보이도록 설정합니다.
+        int targetIndex = (stage - 1) % targetBars.Length;
+        targetBars[targetIndex].gameObject.SetActive(true);
+    }
+
+    public void ShowStageBall(int stage)
+    {
+        // 모든 타깃 바를 숨깁니다.
+        // foreach (Transform StageBall in StageBalls)
+        // {
+        //     StageBall.gameObject.SetActive(false);
+        // }
+
+        // // 현재 스테이지에 맞는 타깃 바를 보이도록 설정합니다.
+        // int targetIndex = (stage - 1) % StageBalls.Length;
+        // targetBars[targetIndex].gameObject.SetActive(true);
+        // 현재 스테이지에 맞는 타겟 바를 녹색으로 변경합니다.
+        
+
+        foreach (Transform stageBall in StageBalls)
+        {
+            stageBall.GetComponent<Renderer>().material.color = Color.gray;
+        }
+
+        int targetIndex = (stage - 1) % StageBalls.Length;
+        StageBalls[targetIndex].gameObject.GetComponent<Renderer>().material.color = Color.green;
     }
 }

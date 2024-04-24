@@ -34,7 +34,7 @@ public class RadioManager : MonoBehaviour
     }
 
     // 현재 스테이지를 증가시키고 콘솔에 출력하는 메서드
-    private void IncrementStage()
+    public void IncrementStage()
     {
         currentStage++;
         Debug.Log("현재 스테이지 번호: " + currentStage);
@@ -44,6 +44,12 @@ public class RadioManager : MonoBehaviour
         {
             StageChanged?.Invoke(currentStage);
         }
+    }
+
+    // 스테이지를 설정하는 메서드
+    public void SetCurrentStage(int stage)
+    {
+        currentStage = stage;
     }
 
     void Awake()
@@ -91,12 +97,6 @@ public class RadioManager : MonoBehaviour
             movingBarController.Update();
         }
 
-        // if (stageColorController != null)
-        // {
-        //     stageColorController.Update();
-        // }
-
-        // 매 프레임마다 현재 스테이지 번호를 콘솔에 출력합니다.
         Debug.Log("현재 스테이지 번호: " + currentStage);
     }
 }
