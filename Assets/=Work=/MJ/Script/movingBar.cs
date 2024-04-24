@@ -5,61 +5,75 @@ public class MovingBarController : MonoBehaviour
     public Transform startBar;
     public Transform endBar;
     public Transform movingBar;
-    
-    // moving_bar의 시작 위치
-    public Transform initialPosition;
-
-    // 움직이는 바의 속도
+    // public Transform initialPosition;
     public float speed = 1.0f;
-
     private Vector3 startMarker;
     private Vector3 endMarker;
     private bool movingToEnd = true;
+    private GameObject[] targetBarStages;
 
-    void Start()
+    private void Start()
     {
         startMarker = startBar.position;
         endMarker = endBar.position;
-        movingBar.position = initialPosition.position; // 초기 위치 설정
+        // movingBar.position = initialPosition.position;
+
+        // Target bar stages 초기화
+        targetBarStages = new GameObject[3];
+        for (int i = 0; i < targetBarStages.Length; i++)
+        {
+
+            targetBarStages[i] = GameObject.Find("target_bar_stage" + (i + 1));
+        }
     }
 
     public void Update()
     {
-        // 현재 방향의 목표 지점 설정
-        Vector3 targetMarker = movingToEnd ? endMarker : startMarker;
-
-        // 이동 방향 설정
-        Vector3 direction = targetMarker - movingBar.position;
-
-        // 이동 속도 계산
-        float step = speed * Time.deltaTime;
-
-        // 이동
-        movingBar.position += direction.normalized * step;
-
-        // 목표 지점에 도달했을 때 방향 변경
-        if (Vector3.Distance(movingBar.position, targetMarker) < 0.01f)
+        // 키보드 "K"를 누르고 있는 동안 이동을 멈춥니다.
+        if (!IsMovementPaused())
         {
-            movingToEnd = !movingToEnd;
+            Debug.Log("k 클릭");
+            Vector3 targetMarker = movingToEnd ? endMarker : startMarker;
+            Vector3 direction = targetMarker - movingBar.position;
+            float step = speed * Time.deltaTime;
+
+            movingBar.position += direction.normalized * step;
+
+            if (Vector3.Distance(movingBar.position, targetMarker) < 0.01f)
+            {
+                movingToEnd = !movingToEnd;
+            }
         }
+
+        // 스테이지 변경 이벤트 핸들러 호출
+        int stage = RadioManager.Instance.GetCurrentStage();
+        HandleStageChanged(stage);
     }
 
-    // 오른쪽 컨트롤을 클릭하여 이동을 일시적으로 멈춥니다.
-    private void OnMouseDown()
+    // 키보드 "K"를 누르고 있는지 확인하는 메서드
+    private bool IsMovementPaused()
     {
-        // 클릭된 오브젝트의 이름이 right_ctrl이면 이동을 멈춥니다.
-        if (gameObject.name == "right_ctrl")
-        {   
-            Debug.LogError("right_ctrl 클릭");
-            StartCoroutine(PauseMovement(1f)); // 0.1초 동안 이동을 멈춥니다.
-        }
+        return Input.GetKey(KeyCode.K);
     }
 
-    // 이동을 멈춘 후 재개합니다.
+    private void HandleStageChanged(int stage)
+    {
+        Debug.Log("무빙바 스테이지가 변경되었습니다. 현재 스테이지: " + stage);
+        ShowTargetBarStage(stage);
+    }
+
     private System.Collections.IEnumerator PauseMovement(float pauseTime)
     {
-        Time.timeScale = 0f; // 시간 흐름을 멈춥니다.
-        yield return new WaitForSecondsRealtime(pauseTime); // 지정된 시간만큼 대기합니다.
-        Time.timeScale = 1f; // 시간 흐름을 다시 시작합니다.
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(pauseTime);
+        Time.timeScale = 1f;
+    }
+
+    public void ShowTargetBarStage(int stage)
+    {
+        for (int i = 0; i < targetBarStages.Length; i++)
+        {
+            targetBarStages[i].SetActive(i == (stage - 1));
+        }
     }
 }

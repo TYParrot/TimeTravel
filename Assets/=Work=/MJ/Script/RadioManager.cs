@@ -62,13 +62,13 @@ public class RadioManager : MonoBehaviour
 
     // MovingBarController를 멤버 변수로 선언합니다.
     public MovingBarController movingBarController;
-    public BallColorChanger stageColorController;
+    // public BallColorChanger stageColorController;
 
     void Start()
     {
         // MovingBarController를 초기화합니다.
         movingBarController = FindObjectOfType<MovingBarController>();
-        stageColorController = FindObjectOfType<BallColorChanger>();
+        // stageColorController = FindObjectOfType<BallColorChanger>();
 
         // MovingBarController가 null이 아닌 경우에만 설정합니다.
         if (movingBarController != null)
@@ -91,10 +91,10 @@ public class RadioManager : MonoBehaviour
             movingBarController.Update();
         }
 
-        if (stageColorController != null)
-        {
-            stageColorController.Update();
-        }
+        // if (stageColorController != null)
+        // {
+        //     stageColorController.Update();
+        // }
 
         // 매 프레임마다 현재 스테이지 번호를 콘솔에 출력합니다.
         Debug.Log("현재 스테이지 번호: " + currentStage);
