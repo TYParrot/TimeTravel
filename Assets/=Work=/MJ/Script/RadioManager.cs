@@ -26,7 +26,7 @@ public class RadioManager : MonoBehaviour
     {
         return currentStage;
     }
-    
+
     // 마우스 클릭 시 호출되는 메서드
     private void OnMouseDown()
     {
@@ -35,7 +35,7 @@ public class RadioManager : MonoBehaviour
 
     // 현재 스테이지를 증가시키고 콘솔에 출력하는 메서드
     public void IncrementStage()
-    {   
+    {
         ///여기에 1초 딜레이 넣어줘
         currentStage++;
         Debug.Log("현재 스테이지 번호: " + currentStage);
@@ -93,11 +93,20 @@ public class RadioManager : MonoBehaviour
     void Update()
     {
         // 필요한 경우 MovingBarController의 Update 함수를 호출합니다.
-        if (movingBarController != null)
+        if (currentStage <= 3)
         {
-            movingBarController.Update();
+            if (movingBarController != null)
+            {
+                movingBarController.Update();
+            }
         }
+        else{
+            Debug.Log("끝");
+            movingBarController.setMusic();
 
+        }
         Debug.Log("현재 스테이지 번호: " + currentStage);
+        //뮤직 씬으로 넘어가야 함
+
     }
 }
