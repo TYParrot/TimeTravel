@@ -8,8 +8,11 @@ public class StartManager : MonoBehaviour
 {
     public GameObject CreditPanel;
 
+    public void Start(){
+        Managers.Game.SceneSetting();
+    }
+
     public void StartBtn(){
-        //1번은 House 씬
         Managers.Game.changeScene(1);
     }
 
