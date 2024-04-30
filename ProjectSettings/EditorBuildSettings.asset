@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/=Work=/TY/Scene/House.unity
     guid: fc9f8aa8b04302444a990ef63abb27fa
+  - enabled: 1
+    path: Assets/=Work=/MJ/Scene/RadioScene.unity
+    guid: 9be9233cf11c27549aaf283338b916b7
+  - enabled: 1
+    path: Assets/=Work=/SI/Scene/TelephoneScene.unity
+    guid: f9d0a1e621d3cc347855a4bb53cdbe5f
+  - enabled: 1
+    path: Assets/=Work=/SB/Scene/MicrowaveScene.unity
+    guid: ec4e0c1675dcd9a45a4a967cf94e4d0e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ed72be55522c8448bae8b0d66fa21adf,
       type: 2}

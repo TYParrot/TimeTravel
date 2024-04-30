@@ -8,7 +8,7 @@ namespace Game
 {
     //여기서 클리어 된 게임들을 체크할 것
     //GameManager는 하나밖에 존재하지 못함
-    //게임이 클리어 되었을 시 ex) Managers.Game.ClearRadio(true); 호출하면 클리어로 업데이트
+    //게임이 클리어 되었을 시 ex) Managers.Game.ClearRadio(true); Manageres.Game.changeScene(1); 호출하면 클리어로 업데이트
     //씬 업데이트도 Managers.Game.changeScene(index); 로 접근
     //클리어 메소드에 interaction을 막는 코드 추가해야함. 이것도 Init할 때 초기화해주기.
     //각 씬의 Manager가 있다면 Start될 때, Managers.Game.SceneSetting() 호출 필요.
