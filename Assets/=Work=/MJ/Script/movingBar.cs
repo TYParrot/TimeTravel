@@ -11,7 +11,7 @@ public class MovingBarController : MonoBehaviour
     public Transform[] targetBars; // targetBar 배열로 변경합니다.
     public Transform[] StageBalls;
 
-    public float speed = 8.0f;
+    public float speed = 0.01f;
     private Vector3 startMarker;
     private Vector3 endMarker;
     private bool movingToEnd = true;
@@ -25,21 +25,22 @@ public class MovingBarController : MonoBehaviour
     private GameObject gameRuleObject;
     private GameObject gameSceneObject;
     private GameObject musicSceneObject;
+    private GameObject colorObject;
 
     private GameObject beforeFinger;
     private GameObject afterFinger;
     private GameObject fadeObject;
 
-    private Color originalRadioColor;
+    public Color originalRadioColor;
     private bool isRadioGray = false;
-     public float fadeSpeed = 1.0f; // 페이드 속도를 조절합니다.
+    public float fadeSpeed = 1.0f; // 페이드 속도를 조절합니다.
 
-     public AudioClip m4aClip;
+    public AudioClip m4aClip;
     private AudioSource audioSource;
 
     private void Start()
-    {   
-       
+    {
+
         succObject = GameObject.Find("succ");
         failObject = GameObject.Find("fail");
         gameRuleObject = GameObject.Find("game_rule");
@@ -49,6 +50,7 @@ public class MovingBarController : MonoBehaviour
         beforeFinger = GameObject.Find("before");
         afterFinger = GameObject.Find("after");
         fadeObject.SetActive(false);
+        colorObject = GameObject.Find("RadioBackBody");
 
         // screenFade = GetComponent<ScreenFade>();
 
@@ -70,20 +72,30 @@ public class MovingBarController : MonoBehaviour
         if (gameRuleObject != null && gameRuleShow)
         {
             gameRuleObject.SetActive(true);
-            // StartCoroutine(HideAfterDelay(gameRuleObject, 5f));
+            StartCoroutine(HideAfterDelay(gameRuleObject, 5f));
             gameRuleShow = false;
         }
 
-        GameObject taggedObject = GameObject.FindGameObjectWithTag("Radio");
-        if (taggedObject != null)
+        // GameObject taggedObject = GameObject.FindGameObjectWithTag("Radio");///
+        if (colorObject != null)
         {
-            originalRadioColor = taggedObject.GetComponent<Renderer>().material.color;
+            Renderer renderer = colorObject.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                // originalRadioColor = renderer.material.color;
+                // colorObject.GetComponent<Renderer>().material.color = originalRadioColor;
+                originalRadioColor = colorObject.GetComponent<Renderer>().material.color;
+            }
+            else
+            {
+                Debug.LogError("Renderer component not found on the object with the 'Radio' tag.");
+            }
         }
         else
         {
-            Debug.LogError("No GameObject found with the specified tag.");
+            Debug.LogError("오브젝트 못찾음");
         }
-        
+
 
         startMarker = startBar.position;
         endMarker = endBar.position;
@@ -92,68 +104,92 @@ public class MovingBarController : MonoBehaviour
 
     public void Update()
     {
-        if (stage<=3){
-        StartCoroutine(HideAfterDelay(gameRuleObject, 5f));
-        stage = RadioManager.Instance.GetCurrentStage();
-        ShowTargetBarStage(stage);
-        ShowStageBall(stage);
-
-        if (!IsMovementPaused())
+        colorObject = GameObject.Find("RadioBackBody");
+        if (colorObject != null)
         {
-            Vector3 targetMarker = movingToEnd ? endMarker : startMarker;
-            Vector3 direction = targetMarker - movingBar.position;
-            float step = speed * Time.deltaTime;
-
-            movingBar.position += direction.normalized * step;
-
-            if (Vector3.Distance(movingBar.position, targetMarker) < 0.01f)
+            Renderer renderer = colorObject.GetComponent<Renderer>();
+            if (renderer != null)
             {
-                movingToEnd = !movingToEnd;
+                // originalRadioColor = renderer.material.color;
+                // colorObject.GetComponent<Renderer>().material.color = originalRadioColor;
+                originalRadioColor = colorObject.GetComponent<Renderer>().material.color;
             }
-
+            else
+            {
+                Debug.LogError("Renderer component not found on the object with the 'Radio' tag.");
+            }
         }
         else
         {
-            if (!movementPaused)
+            Debug.LogError("오브젝트 못찾음");
+        }
+
+        if (stage <= 3)
+        {
+            StartCoroutine(HideAfterDelay(gameRuleObject, 10f));
+            stage = RadioManager.Instance.GetCurrentStage();
+            ShowTargetBarStage(stage);
+            ShowStageBall(stage);
+            
+
+            if (!IsMovementPaused())
             {
-                Debug.Log("k 클릭");
+                Vector3 targetMarker = movingToEnd ? endMarker : startMarker;
+                Vector3 direction = targetMarker - movingBar.position;
+                float step = speed * Time.deltaTime;
 
-                // stage에 따라 올바른 targetBar를 선택합니다.
-                int targetIndex = (stage - 1) % targetBars.Length;
-                Transform targetBar = targetBars[targetIndex];
+                movingBar.position += direction.normalized * step;
 
-                if (Vector3.Distance(movingBar.position, targetBar.position) < 0.5f)
+                if (Vector3.Distance(movingBar.position, targetMarker) < 0.01f)
                 {
-                    // 성공 조건을 충족했을 때의 처리
-                    succObject.SetActive(true);
-                    StartCoroutine(HideAfterDelay(succObject, 0.6f));
-                    Debug.Log("succ 활성화 됨");
-                    successAchieved = true; // 성공 여부 플래그를 설정
-                    HandleStageChanged(stage); // 스테이지 변경 처리
-                    RadioManager.Instance.IncrementStage();
-
+                    movingToEnd = !movingToEnd;
                 }
 
-                else
+            }
+            else
+            {
+                if (!movementPaused)
                 {
-                    if (!succObject.activeSelf)
+                    Debug.Log("k 클릭");
+
+                    // stage에 따라 올바른 targetBar를 선택합니다.
+                    int targetIndex = (stage - 1) % targetBars.Length;
+                    Transform targetBar = targetBars[targetIndex];
+
+                    if (Vector3.Distance(movingBar.position, targetBar.position) < 0.5f)
                     {
-                        // 실패 조건을 처리
-                        failObject.SetActive(true);
-                        Debug.Log("fail 활성화 됨");
-                        StartCoroutine(HideAfterDelay(failObject, 0.6f));
+                        // 성공 조건을 충족했을 때의 처리
+                        succObject.SetActive(true);
+                        StartCoroutine(HideAfterDelay(succObject, 0.6f));
+                        Debug.Log("succ 활성화 됨");
+                        successAchieved = true; // 성공 여부 플래그를 설정
+                        HandleStageChanged(stage); // 스테이지 변경 처리
+                        RadioManager.Instance.IncrementStage();
+
+                    }
+
+                    else
+                    {
+                        if (!succObject.activeSelf)
+                        {
+                            // 실패 조건을 처리
+                            failObject.SetActive(true);
+                            StartCoroutine(HideAfterDelay(failObject, 0.6f));
+                            Debug.Log("fail 활성화 됨");
+                        }
                     }
                 }
             }
         }
-        }
-        else if (stage ==4){ //stage 4가 됐을 때 
+        else if (stage == 4)
+        { //stage 4가 됐을 때 
             setMusic();
             // gameRuleObject.SetActive(false);
             // gameSceneObject.SetActive(false);
             // musicSceneObject.SetActive(true);
         }
-        else{
+        else
+        {
             Debug.Log("hello");
         }
     }
@@ -191,7 +227,7 @@ public class MovingBarController : MonoBehaviour
             stageBall.GetComponent<Renderer>().material.color = Color.gray;
         }
 
-        switch(stage)
+        switch (stage)
         {
             case 1:
                 StageBalls[0].GetComponent<Renderer>().material.color = originalRadioColor;
@@ -206,7 +242,7 @@ public class MovingBarController : MonoBehaviour
                 StageBalls[2].GetComponent<Renderer>().material.color = originalRadioColor;
                 break;
             default:
-                Debug.LogError("Invalid stage number.");
+                // Debug.LogError("Invalid stage number.");
                 break;
         }
     }
@@ -233,58 +269,78 @@ public class MovingBarController : MonoBehaviour
     public IEnumerator HideAfterDelay(GameObject obj, float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
-        // 지연 후 오브젝트를 다시 비활성화합니다.
-        obj.SetActive(false);
-        Debug.Log("비활성화 됨");
+
+        // obj가 null이 아닌지 확인하고 유효성 검사를 수행합니다.
+        if (obj != null)
+        {
+            // 지연 후 오브젝트를 다시 비활성화합니다.
+            obj.SetActive(false);
+            Debug.Log("비활성화 됨");
+        }
+        else
+        {
+            Debug.LogWarning("Object to hide is null.");
+        }
     }
 
     //// 스테이지 4가 되면(라디오 에서 관리) 라디오 듣는 씬 틀어야 함 나머지는 ek active false 로;
-    public void setMusic(){
+    public void setMusic()
+    {
         // screenFade.FadeIn();
         // fadeObject.SetActive(true);
 
         // FadeOut();
-            gameRuleObject.SetActive(false);
-            gameSceneObject.SetActive(false);
-            musicSceneObject.SetActive(true);
-            afterFinger.SetActive(false);
-            HideAfterDelay(afterFinger, 0.001f);
-            StartCoroutine(HideAfterDelay(beforeFinger, 6f));
-            afterFinger.SetActive(true);
+        // gameRuleObject.SetActive(false);
+        gameSceneObject.SetActive(false);
+        afterFinger.SetActive(false);
+        musicSceneObject.SetActive(true);
+        afterFinger.SetActive(false);
+        // HideAfterDelay(afterFinger, 0.001f);
+        StartCoroutine(HideAfterDelay(beforeFinger, 6f));
+        afterFinger.SetActive(true);
 
 
-            
+        StartCoroutine(CallClearRadioAfterDelay(30f));
+
+
 
     }
 
 
-    public void FadeIn()
-    {
-        StartCoroutine(Fade(1f, 0f));
-    }
+    // public void FadeIn()
+    // {
+    //     StartCoroutine(Fade(1f, 0f));
+    // }
 
-    // 페이드아웃 효과를 적용합니다.
-    public void FadeOut()
-    {
-        StartCoroutine(Fade(0f, 1f));
-    }
+    // // 페이드아웃 효과를 적용합니다.
+    // public void FadeOut()
+    // {
+    //     StartCoroutine(Fade(0f, 1f));
+    // }
 
     // 검은 패널의 알파값을 변경하여 페이드 효과를 구현합니다.
-    IEnumerator Fade(float startAlpha, float endAlpha)
+    // IEnumerator Fade(float startAlpha, float endAlpha)
+    // {
+    //     float elapsedTime = 0f;
+    //     Color startColor = fadeObject.GetComponent<Renderer>().material.color;
+    //     Color endColor = new Color(startColor.r, startColor.g, startColor.b, endAlpha);
+
+    //     while (elapsedTime < fadeSpeed)
+    //     {
+    //         fadeObject.GetComponent<Renderer>().material.color = Color.Lerp(startColor, endColor, elapsedTime / fadeSpeed);
+    //         elapsedTime += Time.deltaTime;
+    //         yield return null;
+    //     }
+
+    //     fadeObject.GetComponent<Renderer>().material.color = endColor;
+    // }
+    IEnumerator CallClearRadioAfterDelay(float delay)
     {
-        float elapsedTime = 0f;
-        Color startColor = fadeObject.GetComponent<Renderer>().material.color;
-        Color endColor = new Color(startColor.r, startColor.g, startColor.b, endAlpha);
+        yield return new WaitForSeconds(delay);
 
-        while (elapsedTime < fadeSpeed)
-        {
-            fadeObject.GetComponent<Renderer>().material.color = Color.Lerp(startColor, endColor, elapsedTime / fadeSpeed);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        fadeObject.GetComponent<Renderer>().material.color = endColor;
+        // Managers.Game의 ClearRadio 함수 호출
+        // Managers.Game.ClearRadio();
+        Debug.Log("클리어 라디오 호출 되었음");
     }
-
 
 }

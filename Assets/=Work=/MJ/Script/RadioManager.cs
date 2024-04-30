@@ -82,7 +82,7 @@ public class RadioManager : MonoBehaviour
         {
             // 필요한 설정을 수행합니다.
             // 예를 들어, speed 값을 변경할 수 있습니다.
-            movingBarController.speed = 2.0f;
+            // movingBarController.speed = 2.0f;
         }
         else
         {
