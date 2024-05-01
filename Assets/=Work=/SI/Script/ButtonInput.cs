@@ -24,25 +24,24 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "retry";
+                viewmessage.text = "첫 시작은 지역번호로 시작해야해 안산의 지역 번호는 '0345' 야";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "free";
+                viewmessage.text = "이제 전화걸고 싶은 번호를 입력해봐";
             }
         }
         // "-"추가하고 반응
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "nice";
+            viewmessage.text = "잘하고 있어!";
         }
 
         if (viewnum.text.Length == 19)
         {
-            viewnum.text += "-";
-            viewmessage.text = "congratulation";
+            viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
         }
 
     }
@@ -64,25 +63,24 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "retry";
+                viewmessage.text = "첫 시작은 지역번호로 시작해야해 안산의 지역 번호는 '0345' 야";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "free";
+                viewmessage.text = "이제 전화걸고 싶은 번호를 입력해봐";
             }
         }
         // "-"추가하고 반응
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "nice";
+            viewmessage.text = "잘하고 있어!";
         }
 
         if (viewnum.text.Length == 19)
         {
-            viewnum.text += "-";
-            viewmessage.text = "congratulation";
+            viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
         }
 
     }
@@ -104,25 +102,24 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "retry";
+                viewmessage.text = "첫 시작은 지역번호로 시작해야해 안산의 지역 번호는 '0345' 야";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "free";
+                viewmessage.text = "이제 전화걸고 싶은 번호를 입력해봐";
             }
         }
         // "-"추가하고 반응
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "nice";
+            viewmessage.text = "잘하고 있어!";
         }
 
         if (viewnum.text.Length == 19)
         {
-            viewnum.text += "-";
-            viewmessage.text = "congratulation";
+            viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
         }
 
     }
@@ -143,25 +140,24 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "retry";
+                viewmessage.text = "첫 시작은 지역번호로 시작해야해 안산의 지역 번호는 '0345' 야";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "free";
+                viewmessage.text = "이제 전화걸고 싶은 번호를 입력해봐";
             }
         }
         // "-"추가하고 반응
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "nice";
+            viewmessage.text = "잘하고 있어!";
         }
 
         if (viewnum.text.Length == 19)
         {
-            viewnum.text += "-";
-            viewmessage.text = "congratulation";
+            viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
         }
 
     }
@@ -183,25 +179,24 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "retry";
+                viewmessage.text = "첫 시작은 지역번호로 시작해야해 안산의 지역 번호는 '0345' 야";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "free";
+                viewmessage.text = "이제 전화걸고 싶은 번호를 입력해봐";
             }
         }
         // "-"추가하고 반응
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "nice";
+            viewmessage.text = "잘하고 있어!";
         }
 
         if (viewnum.text.Length == 19)
         {
-            viewnum.text += "-";
-            viewmessage.text = "congratulation";
+            viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
         }
     }
     public void Clicked5()
@@ -222,25 +217,24 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "retry";
+                viewmessage.text = "첫 시작은 지역번호로 시작해야해 안산의 지역 번호는 '0345' 야";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "free";
+                viewmessage.text = "이제 전화걸고 싶은 번호를 입력해봐";
             }
         }
         // "-"추가하고 반응
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "nice";
+            viewmessage.text = "잘하고 있어!";
         }
 
         if (viewnum.text.Length == 19)
-        {
-            viewnum.text += "-";
-            viewmessage.text = "congratulation";
+        {            
+            viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
         }
 
     }
@@ -261,25 +255,24 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "retry";
+                viewmessage.text = "첫 시작은 지역번호로 시작해야해 안산의 지역 번호는 '0345' 야";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "free";
+                viewmessage.text = "이제 전화걸고 싶은 번호를 입력해봐";
             }
         }
         // "-"추가하고 반응
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "nice";
+            viewmessage.text = "잘하고 있어!";
         }
 
         if (viewnum.text.Length == 19)
         {
-            viewnum.text += "-";
-            viewmessage.text = "congratulation";
+            viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
         }
     }
     public void Clicked7()
@@ -299,25 +292,24 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "retry";
+                viewmessage.text = "첫 시작은 지역번호로 시작해야해 안산의 지역 번호는 '0345' 야";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "free";
+                viewmessage.text = "이제 전화걸고 싶은 번호를 입력해봐";
             }
         }
         // "-"추가하고 반응
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "nice";
+            viewmessage.text = "잘하고 있어!";
         }
 
         if (viewnum.text.Length == 19)
         {
-            viewnum.text += "-";
-            viewmessage.text = "congratulation";
+            viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
         }
     }
     public void Clicked8()
@@ -337,25 +329,24 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "retry";
+                viewmessage.text = "첫 시작은 지역번호로 시작해야해 안산의 지역 번호는 '0345' 야";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "free";
+                viewmessage.text = "이제 전화걸고 싶은 번호를 입력해봐";
             }
         }
         // "-"추가하고 반응
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "nice";
+            viewmessage.text = "잘하고 있어!";
         }
 
         if (viewnum.text.Length == 19)
         {
-            viewnum.text += "-";
-            viewmessage.text = "congratulation";
+            viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
         }
     }
     public void Clicked9()
@@ -375,25 +366,24 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "retry";
+                viewmessage.text = "첫 시작은 지역번호로 시작해야해 안산의 지역 번호는 '0345' 야";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "free";
+                viewmessage.text = "이제 전화걸고 싶은 번호를 입력해봐";
             }
         }
         // "-"추가하고 반응
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "nice";
+            viewmessage.text = "잘하고 있어!";
         }
 
         if (viewnum.text.Length == 19)
         {
-            viewnum.text += "-";
-            viewmessage.text = "congratulation";
+            viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
         }
     }
 }
