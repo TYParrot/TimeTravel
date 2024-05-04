@@ -6,18 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class StartManager : MonoBehaviour
 {
-    public GameObject CreditPanel;
-
     public void Start(){
         Managers.Game.SceneSetting();
     }
 
     public void StartBtn(){
         Managers.Game.changeScene(1);
-    }
-
-    public void CreditBtn(){
-        CreditPanel.SetActive(true);
     }
 
     public void ExitBtn(){
