@@ -5,7 +5,11 @@ using TMPro;
 
 public class ButtonInput : MonoBehaviour
 {
-    public TextMeshProUGUI viewnum, inputnum0, inputnum1, inputnum2, inputnum3, inputnum4, inputnum5, inputnum6, inputnum7, inputnum8, inputnum9, viewmessage;
+    public TextMeshProUGUI viewnum, viewmessage;
+    
+    public PlayQuickSound SoundScriptInstance;
+
+    public SceneChange ChangeScriptInstance;
 
     public void Clicked0()
     {
@@ -13,7 +17,7 @@ public class ButtonInput : MonoBehaviour
         string currentNum = viewnum.text;
 
         // 추가
-        string additionalNum = inputnum0.text;
+        string additionalNum = "0";
 
         // 변경
         viewnum.text = currentNum + additionalNum;
@@ -41,7 +45,13 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
+            SoundPlay();
+
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
+
+            SceneChanger();
+
+
         }
 
     }
@@ -52,7 +62,7 @@ public class ButtonInput : MonoBehaviour
         string currentNum = viewnum.text;
 
         // 추가
-        string additionalNum = inputnum1.text;
+        string additionalNum = "1";
 
         // 변경
         viewnum.text = currentNum + additionalNum;
@@ -80,7 +90,11 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
+            SoundPlay();
+
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
+
+            SceneChanger();
         }
 
     }
@@ -91,7 +105,7 @@ public class ButtonInput : MonoBehaviour
         string currentNum = viewnum.text;
 
         // 추가
-        string additionalNum = inputnum2.text;
+        string additionalNum = "2";
 
         // 변경
         viewnum.text = currentNum + additionalNum;
@@ -119,7 +133,11 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
+            SoundPlay();
+
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
+
+            SceneChanger();
         }
 
     }
@@ -129,7 +147,7 @@ public class ButtonInput : MonoBehaviour
         string currentNum = viewnum.text;
 
         // 추가
-        string additionalNum = inputnum3.text;
+        string additionalNum = "3";
 
         // 변경
         viewnum.text = currentNum + additionalNum;
@@ -157,7 +175,11 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
+            SoundPlay();
+
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
+
+            SceneChanger();
         }
 
     }
@@ -167,7 +189,7 @@ public class ButtonInput : MonoBehaviour
         string currentNum = viewnum.text;
 
         // 추가
-        string additionalNum = inputnum4.text;
+        string additionalNum = "4";
 
         // 변경
         viewnum.text = currentNum + additionalNum;
@@ -196,7 +218,11 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
+            SoundPlay();
+
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
+
+            SceneChanger();
         }
     }
     public void Clicked5()
@@ -205,7 +231,7 @@ public class ButtonInput : MonoBehaviour
         string currentNum = viewnum.text;
 
         // 추가
-        string additionalNum = inputnum5.text;
+        string additionalNum = "5";
 
         // 변경
         viewnum.text = currentNum + additionalNum;
@@ -233,8 +259,12 @@ public class ButtonInput : MonoBehaviour
         }
 
         if (viewnum.text.Length == 19)
-        {            
+        {
+            SoundPlay();
+
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
+
+            SceneChanger();
         }
 
     }
@@ -244,7 +274,7 @@ public class ButtonInput : MonoBehaviour
         string currentNum = viewnum.text;
 
         // 추가
-        string additionalNum = inputnum6.text;
+        string additionalNum = "6";
 
         // 변경
         viewnum.text = currentNum + additionalNum;
@@ -272,7 +302,11 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
+            SoundPlay();
+
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
+
+            SceneChanger();
         }
     }
     public void Clicked7()
@@ -281,7 +315,7 @@ public class ButtonInput : MonoBehaviour
         string currentNum = viewnum.text;
 
         // 추가
-        string additionalNum = inputnum7.text;
+        string additionalNum = "7";
 
         // 변경
         viewnum.text = currentNum + additionalNum;
@@ -309,7 +343,11 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
+            SoundPlay();
+
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
+
+            SceneChanger();
         }
     }
     public void Clicked8()
@@ -318,7 +356,7 @@ public class ButtonInput : MonoBehaviour
         string currentNum = viewnum.text;
 
         // 추가
-        string additionalNum = inputnum8.text;
+        string additionalNum = "8";
 
         // 변경
         viewnum.text = currentNum + additionalNum;
@@ -346,7 +384,11 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
+            SoundPlay();
+
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
+
+            SceneChanger();
         }
     }
     public void Clicked9()
@@ -355,7 +397,7 @@ public class ButtonInput : MonoBehaviour
         string currentNum = viewnum.text;
 
         // 추가
-        string additionalNum = inputnum9.text;
+        string additionalNum = "9";
 
         // 변경
         viewnum.text = currentNum + additionalNum;
@@ -383,7 +425,44 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
+            SoundPlay();
+
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
+
+            SceneChanger();
         }
     }
+    //소리 재생
+    public void SoundPlay()
+    {
+        string CurrentNum = viewnum.text;
+
+        if(CurrentNum.Length == 19)
+        {
+            //사운드 스크립트 함수 호출
+            if (SoundScriptInstance != null)
+            {
+                SoundScriptInstance.Play();
+            }
+        }
+    }
+
+    public void SceneChanger()
+    {
+            StartCoroutine(Changer());
+    }
+
+    IEnumerator Changer()
+    {
+        // 음성 끝날때까지 대기
+        yield return new WaitForSeconds(3f);
+
+        if (ChangeScriptInstance != null)
+        {
+            ChangeScriptInstance.Change();
+        }
+
+
+    }
 }
+
