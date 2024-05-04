@@ -5,14 +5,12 @@ using UnityEngine;
 public class Spin : MonoBehaviour
 {
     public Transform Pannel;
-    public float rotationDuration = 1f; // 회전 소요 시간 (초)
-    public float returnDuration = 1f; // 회전 후 되돌아오는 소요 시간 (초)
 
-    private bool isSpinning = false; // 회전 중인지 여부를 나타내는 변수
+    private bool IsSpinning = false; // 회전 중인지 체크하는 변수
 
     public void Click_To_Spin0()
     {
-        if (!isSpinning)
+        if (!IsSpinning)
         {
             StartCoroutine(SpinCoroutine0());
         }
@@ -20,41 +18,41 @@ public class Spin : MonoBehaviour
 
     IEnumerator SpinCoroutine0()
     {
-        isSpinning = true;
+        IsSpinning = true;
 
-        // 시작 각도와 목표 각도 설정
-        float startAngle = Pannel.localRotation.eulerAngles.z;
-        float targetAngle = startAngle - 305f;
+        //각도 설정
+        float StartAngle = Pannel.localRotation.eulerAngles.z;
+        float CurrentAngle = StartAngle;
+        float TargetAngle = StartAngle + 335f;
 
-        // 회전 프레임 별로 끊어서 연결
-        float t = 0f;
-        while (t < 1f)
+        //회전 속도
+        float SpinSpeed = 200f;
+
+        //회전 시작
+        while (CurrentAngle < TargetAngle)
         {
-            t += Time.deltaTime / rotationDuration;
-            float currentAngle = Mathf.Lerp(startAngle, targetAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle += SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
         // 회전 후 대기
-        yield return new WaitForSeconds(returnDuration);
+        yield return new WaitForSeconds(0.2f);
 
-        // 되돌아오는 회전 프레임 별로 끊어서 연결
-        t = 0f;
-        while (t < 1f)
+        //회전 후 복귀
+        while (CurrentAngle > StartAngle)
         {
-            t += Time.deltaTime / returnDuration;
-            float currentAngle = Mathf.Lerp(targetAngle, startAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle -= SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
-        isSpinning = false;
+        IsSpinning = false;
     }
 
     public void Click_To_Spin1()
     {
-        if (!isSpinning)
+        if (!IsSpinning)
         {
             StartCoroutine(SpinCoroutine1());
         }
@@ -62,41 +60,41 @@ public class Spin : MonoBehaviour
 
     IEnumerator SpinCoroutine1()
     {
-        isSpinning = true;
+        IsSpinning = true;
 
-        // 시작 각도와 목표 각도 설정
-        float startAngle = Pannel.localRotation.eulerAngles.z;
-        float targetAngle = startAngle - 45f;
+        //각도 설정
+        float StartAngle = Pannel.localRotation.eulerAngles.z;
+        float CurrentAngle = StartAngle;
+        float TargetAngle = StartAngle + 68f;
 
-        // 회전 프레임 별로 끊어서 연결
-        float t = 0f;
-        while (t < 1f)
+        //회전 속도
+        float SpinSpeed = 200f;
+
+        //회전 시작
+        while (CurrentAngle < TargetAngle)
         {
-            t += Time.deltaTime / rotationDuration;
-            float currentAngle = Mathf.Lerp(startAngle, targetAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle += SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
         // 회전 후 대기
-        yield return new WaitForSeconds(returnDuration);
+        yield return new WaitForSeconds(0.2f);
 
-        // 되돌아오는 회전 프레임 별로 끊어서 연결
-        t = 0f;
-        while (t < 1f)
+        //회전 후 복귀
+        while (CurrentAngle > StartAngle)
         {
-            t += Time.deltaTime / returnDuration;
-            float currentAngle = Mathf.Lerp(targetAngle, startAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle -= SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
-        isSpinning = false;
+        IsSpinning = false;
     }
 
     public void Click_To_Spin2()
     {
-        if (!isSpinning)
+        if (!IsSpinning)
         {
             StartCoroutine(SpinCoroutine2());
         }
@@ -104,41 +102,41 @@ public class Spin : MonoBehaviour
 
     IEnumerator SpinCoroutine2()
     {
-        isSpinning = true;
+        IsSpinning = true;
 
-        // 시작 각도와 목표 각도 설정
-        float startAngle = Pannel.localRotation.eulerAngles.z;
-        float targetAngle = startAngle - 80f;
+        //각도 설정
+        float StartAngle = Pannel.localRotation.eulerAngles.z;
+        float CurrentAngle = StartAngle;
+        float TargetAngle = StartAngle + 98f;
 
-        // 회전 프레임 별로 끊어서 연결
-        float t = 0f;
-        while (t < 1f)
+        //회전 속도
+        float SpinSpeed = 200f;
+
+        //회전 시작
+        while (CurrentAngle < TargetAngle)
         {
-            t += Time.deltaTime / rotationDuration;
-            float currentAngle = Mathf.Lerp(startAngle, targetAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle += SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
         // 회전 후 대기
-        yield return new WaitForSeconds(returnDuration);
+        yield return new WaitForSeconds(0.2f);
 
-        // 되돌아오는 회전 프레임 별로 끊어서 연결
-        t = 0f;
-        while (t < 1f)
+        //회전 후 복귀
+        while (CurrentAngle > StartAngle)
         {
-            t += Time.deltaTime / returnDuration;
-            float currentAngle = Mathf.Lerp(targetAngle, startAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle -= SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
-        isSpinning = false;
+        IsSpinning = false;
     }
 
     public void Click_To_Spin3()
     {
-        if (!isSpinning)
+        if (!IsSpinning)
         {
             StartCoroutine(SpinCoroutine3());
         }
@@ -146,41 +144,41 @@ public class Spin : MonoBehaviour
 
     IEnumerator SpinCoroutine3()
     {
-        isSpinning = true;
+        IsSpinning = true;
 
-        // 시작 각도와 목표 각도 설정
-        float startAngle = Pannel.localRotation.eulerAngles.z;
-        float targetAngle = startAngle - 105f;
+        //각도 설정
+        float StartAngle = Pannel.localRotation.eulerAngles.z;
+        float CurrentAngle = StartAngle;
+        float TargetAngle = StartAngle + 128f;
 
-        // 회전 프레임 별로 끊어서 연결
-        float t = 0f;
-        while (t < 1f)
+        //회전 속도
+        float SpinSpeed = 200f;
+
+        //회전 시작
+        while (CurrentAngle < TargetAngle)
         {
-            t += Time.deltaTime / rotationDuration;
-            float currentAngle = Mathf.Lerp(startAngle, targetAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle += SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
         // 회전 후 대기
-        yield return new WaitForSeconds(returnDuration);
+        yield return new WaitForSeconds(0.2f);
 
-        // 되돌아오는 회전 프레임 별로 끊어서 연결
-        t = 0f;
-        while (t < 1f)
+        //회전 후 복귀
+        while (CurrentAngle > StartAngle)
         {
-            t += Time.deltaTime / returnDuration;
-            float currentAngle = Mathf.Lerp(targetAngle, startAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle -= SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
-        isSpinning = false;
+        IsSpinning = false;
     }
 
     public void Click_To_Spin4()
     {
-        if (!isSpinning)
+        if (!IsSpinning)
         {
             StartCoroutine(SpinCoroutine4());
         }
@@ -188,41 +186,41 @@ public class Spin : MonoBehaviour
 
     IEnumerator SpinCoroutine4()
     {
-        isSpinning = true;
+        IsSpinning = true;
 
-        // 시작 각도와 목표 각도 설정
-        float startAngle = Pannel.localRotation.eulerAngles.z;
-        float targetAngle = startAngle - 135f;
+        //각도 설정
+        float StartAngle = Pannel.localRotation.eulerAngles.z;
+        float CurrentAngle = StartAngle;
+        float TargetAngle = StartAngle + 158f;
 
-        // 회전 프레임 별로 끊어서 연결
-        float t = 0f;
-        while (t < 1f)
+        //회전 속도
+        float SpinSpeed = 200f;
+
+        //회전 시작
+        while (CurrentAngle < TargetAngle)
         {
-            t += Time.deltaTime / rotationDuration;
-            float currentAngle = Mathf.Lerp(startAngle, targetAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle += SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
         // 회전 후 대기
-        yield return new WaitForSeconds(returnDuration);
+        yield return new WaitForSeconds(0.2f);
 
-        // 되돌아오는 회전 프레임 별로 끊어서 연결
-        t = 0f;
-        while (t < 1f)
+        //회전 후 복귀
+        while (CurrentAngle > StartAngle)
         {
-            t += Time.deltaTime / returnDuration;
-            float currentAngle = Mathf.Lerp(targetAngle, startAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle -= SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
-        isSpinning = false;
+        IsSpinning = false;
     }
 
     public void Click_To_Spin5()
     {
-        if (!isSpinning)
+        if (!IsSpinning)
         {
             StartCoroutine(SpinCoroutine5());
         }
@@ -230,41 +228,41 @@ public class Spin : MonoBehaviour
 
     IEnumerator SpinCoroutine5()
     {
-        isSpinning = true;
+        IsSpinning = true;
 
-        // 시작 각도와 목표 각도 설정
-        float startAngle = Pannel.localRotation.eulerAngles.z;
-        float targetAngle = startAngle - 165f;
+        //각도 설정
+        float StartAngle = Pannel.localRotation.eulerAngles.z;
+        float CurrentAngle = StartAngle;
+        float TargetAngle = StartAngle + 188f;
 
-        // 회전 프레임 별로 끊어서 연결
-        float t = 0f;
-        while (t < 1f)
+        //회전 속도
+        float SpinSpeed = 200f;
+
+        //회전 시작
+        while (CurrentAngle < TargetAngle)
         {
-            t += Time.deltaTime / rotationDuration;
-            float currentAngle = Mathf.Lerp(startAngle, targetAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle += SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
         // 회전 후 대기
-        yield return new WaitForSeconds(returnDuration);
+        yield return new WaitForSeconds(0.2f);
 
-        // 되돌아오는 회전 프레임 별로 끊어서 연결
-        t = 0f;
-        while (t < 1f)
+        //회전 후 복귀
+        while (CurrentAngle > StartAngle)
         {
-            t += Time.deltaTime / returnDuration;
-            float currentAngle = Mathf.Lerp(targetAngle, startAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle -= SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
-        isSpinning = false;
+        IsSpinning = false;
     }
 
     public void Click_To_Spin6()
     {
-        if (!isSpinning)
+        if (!IsSpinning)
         {
             StartCoroutine(SpinCoroutine6());
         }
@@ -272,41 +270,41 @@ public class Spin : MonoBehaviour
 
     IEnumerator SpinCoroutine6()
     {
-        isSpinning = true;
+        IsSpinning = true;
 
-        // 시작 각도와 목표 각도 설정
-        float startAngle = Pannel.localRotation.eulerAngles.z;
-        float targetAngle = startAngle - 195f;
+        //각도 설정
+        float StartAngle = Pannel.localRotation.eulerAngles.z;
+        float CurrentAngle = StartAngle;
+        float TargetAngle = StartAngle + 218f;
 
-        // 회전 프레임 별로 끊어서 연결
-        float t = 0f;
-        while (t < 1f)
+        //회전 속도
+        float SpinSpeed = 200f;
+
+        //회전 시작
+        while (CurrentAngle < TargetAngle)
         {
-            t += Time.deltaTime / rotationDuration;
-            float currentAngle = Mathf.Lerp(startAngle, targetAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle += SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
         // 회전 후 대기
-        yield return new WaitForSeconds(returnDuration);
+        yield return new WaitForSeconds(0.2f);
 
-        // 되돌아오는 회전 프레임 별로 끊어서 연결
-        t = 0f;
-        while (t < 1f)
+        //회전 후 복귀
+        while (CurrentAngle > StartAngle)
         {
-            t += Time.deltaTime / returnDuration;
-            float currentAngle = Mathf.Lerp(targetAngle, startAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle -= SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
-        isSpinning = false;
+        IsSpinning = false;
     }
 
     public void Click_To_Spin7()
     {
-        if (!isSpinning)
+        if (!IsSpinning)
         {
             StartCoroutine(SpinCoroutine7());
         }
@@ -314,41 +312,41 @@ public class Spin : MonoBehaviour
 
     IEnumerator SpinCoroutine7()
     {
-        isSpinning = true;
+        IsSpinning = true;
 
-        // 시작 각도와 목표 각도 설정
-        float startAngle = Pannel.localRotation.eulerAngles.z;
-        float targetAngle = startAngle - 225f;
+        //각도 설정
+        float StartAngle = Pannel.localRotation.eulerAngles.z;
+        float CurrentAngle = StartAngle;
+        float TargetAngle = StartAngle + 248f;
 
-        // 회전 프레임 별로 끊어서 연결
-        float t = 0f;
-        while (t < 1f)
+        //회전 속도
+        float SpinSpeed = 200f;
+
+        //회전 시작
+        while (CurrentAngle < TargetAngle)
         {
-            t += Time.deltaTime / rotationDuration;
-            float currentAngle = Mathf.Lerp(startAngle, targetAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle += SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
         // 회전 후 대기
-        yield return new WaitForSeconds(returnDuration);
+        yield return new WaitForSeconds(0.2f);
 
-        // 되돌아오는 회전 프레임 별로 끊어서 연결
-        t = 0f;
-        while (t < 1f)
+        //회전 후 복귀
+        while (CurrentAngle > StartAngle)
         {
-            t += Time.deltaTime / returnDuration;
-            float currentAngle = Mathf.Lerp(targetAngle, startAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle -= SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
-        isSpinning = false;
+        IsSpinning = false;
     }
 
     public void Click_To_Spin8()
     {
-        if (!isSpinning)
+        if (!IsSpinning)
         {
             StartCoroutine(SpinCoroutine8());
         }
@@ -356,41 +354,41 @@ public class Spin : MonoBehaviour
 
     IEnumerator SpinCoroutine8()
     {
-        isSpinning = true;
+        IsSpinning = true;
 
-        // 시작 각도와 목표 각도 설정
-        float startAngle = Pannel.localRotation.eulerAngles.z;
-        float targetAngle = startAngle - 260f;
+        //각도 설정
+        float StartAngle = Pannel.localRotation.eulerAngles.z;
+        float CurrentAngle = StartAngle;
+        float TargetAngle = StartAngle + 275f;
 
-        // 회전 프레임 별로 끊어서 연결
-        float t = 0f;
-        while (t < 1f)
+        //회전 속도
+        float SpinSpeed = 200f;
+
+        //회전 시작
+        while (CurrentAngle < TargetAngle)
         {
-            t += Time.deltaTime / rotationDuration;
-            float currentAngle = Mathf.Lerp(startAngle, targetAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle += SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
         // 회전 후 대기
-        yield return new WaitForSeconds(returnDuration);
+        yield return new WaitForSeconds(0.2f);
 
-        // 되돌아오는 회전 프레임 별로 끊어서 연결
-        t = 0f;
-        while (t < 1f)
+        //회전 후 복귀
+        while (CurrentAngle > StartAngle)
         {
-            t += Time.deltaTime / returnDuration;
-            float currentAngle = Mathf.Lerp(targetAngle, startAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle -= SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
-        isSpinning = false;
+        IsSpinning = false;
     }
 
     public void Click_To_Spin9()
     {
-        if (!isSpinning)
+        if (!IsSpinning)
         {
             StartCoroutine(SpinCoroutine9());
         }
@@ -398,35 +396,35 @@ public class Spin : MonoBehaviour
 
     IEnumerator SpinCoroutine9()
     {
-        isSpinning = true;
+        IsSpinning = true;
 
-        // 시작 각도와 목표 각도 설정
-        float startAngle = Pannel.localRotation.eulerAngles.z;
-        float targetAngle = startAngle - 280f;
+        //각도 설정
+        float StartAngle = Pannel.localRotation.eulerAngles.z;
+        float CurrentAngle = StartAngle;
+        float TargetAngle = StartAngle + 305f;
 
-        // 회전 프레임 별로 끊어서 연결
-        float t = 0f;
-        while (t < 1f)
+        //회전 속도
+        float SpinSpeed = 200f;
+
+        //회전 시작
+        while (CurrentAngle < TargetAngle)
         {
-            t += Time.deltaTime / rotationDuration;
-            float currentAngle = Mathf.Lerp(startAngle, targetAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle += SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
         // 회전 후 대기
-        yield return new WaitForSeconds(returnDuration);
+        yield return new WaitForSeconds(0.2f);
 
-        // 되돌아오는 회전 프레임 별로 끊어서 연결
-        t = 0f;
-        while (t < 1f)
+        //회전 후 복귀
+        while (CurrentAngle > StartAngle)
         {
-            t += Time.deltaTime / returnDuration;
-            float currentAngle = Mathf.Lerp(targetAngle, startAngle, t);
-            Pannel.localRotation = Quaternion.Euler(0, 0, currentAngle);
+            CurrentAngle -= SpinSpeed * Time.deltaTime;
+            Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
 
-        isSpinning = false;
+        IsSpinning = false;
     }
 }
