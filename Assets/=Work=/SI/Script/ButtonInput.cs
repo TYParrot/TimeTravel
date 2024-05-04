@@ -9,7 +9,7 @@ public class ButtonInput : MonoBehaviour
     
     public PlayQuickSound SoundScriptInstance;
 
-    public SceneChange ChangeScriptInstance;
+    public TelephoneManager ManageScriptInstance;
 
     public void Clicked0()
     {
@@ -49,7 +49,6 @@ public class ButtonInput : MonoBehaviour
 
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
 
-            SceneChanger();
 
 
         }
@@ -94,7 +93,6 @@ public class ButtonInput : MonoBehaviour
 
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
 
-            SceneChanger();
         }
 
     }
@@ -137,7 +135,6 @@ public class ButtonInput : MonoBehaviour
 
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
 
-            SceneChanger();
         }
 
     }
@@ -179,7 +176,6 @@ public class ButtonInput : MonoBehaviour
 
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
 
-            SceneChanger();
         }
 
     }
@@ -222,7 +218,6 @@ public class ButtonInput : MonoBehaviour
 
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
 
-            SceneChanger();
         }
     }
     public void Clicked5()
@@ -264,7 +259,6 @@ public class ButtonInput : MonoBehaviour
 
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
 
-            SceneChanger();
         }
 
     }
@@ -306,7 +300,6 @@ public class ButtonInput : MonoBehaviour
 
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
 
-            SceneChanger();
         }
     }
     public void Clicked7()
@@ -347,7 +340,6 @@ public class ButtonInput : MonoBehaviour
 
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
 
-            SceneChanger();
         }
     }
     public void Clicked8()
@@ -388,7 +380,6 @@ public class ButtonInput : MonoBehaviour
 
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
 
-            SceneChanger();
         }
     }
     public void Clicked9()
@@ -429,7 +420,6 @@ public class ButtonInput : MonoBehaviour
 
             viewmessage.text = "고마워 덕분에 다시 움직일 수 있게 됐어!";
 
-            SceneChanger();
         }
     }
     //소리 재생
@@ -447,22 +437,13 @@ public class ButtonInput : MonoBehaviour
         }
     }
 
-    public void SceneChanger()
+    //씬 매니저에 접근
+    public void ExitButton()
     {
-            StartCoroutine(Changer());
-    }
-
-    IEnumerator Changer()
-    {
-        // 음성 끝날때까지 대기
-        yield return new WaitForSeconds(3f);
-
-        if (ChangeScriptInstance != null)
+        if (ManageScriptInstance != null)
         {
-            ChangeScriptInstance.Change();
+            ManageScriptInstance.ClearGame();
         }
-
-
     }
 }
 
