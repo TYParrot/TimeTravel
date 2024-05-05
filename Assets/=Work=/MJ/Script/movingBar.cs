@@ -106,7 +106,8 @@ public class MovingBarController : MonoBehaviour
 
                 movingBar.position += direction.normalized * step;
 
-                if (Vector3.Distance(movingBar.position, targetMarker) < 0.01f)
+                // if (Vector3.Distance(movingBar.position, targetMarker) < 0.01f)
+                if (Vector3.Distance(movingBar.position, targetMarker) < 0.1f)
                 {
                     movingToEnd = !movingToEnd;
                 }
@@ -122,7 +123,8 @@ public class MovingBarController : MonoBehaviour
                     Transform targetBar = targetBars[targetIndex];
 
                     // 클릭 이벤트 처리
-                    if (Vector3.Distance(movingBar.position, targetBar.position) < 0.5f)
+                    // if (Vector3.Distance(movingBar.position, targetBar.position) < 0.5f)
+                    if (Vector3.Distance(movingBar.position, targetBar.position) < 3f)
                     {
                         succObject.SetActive(true);
                         StartCoroutine(HideAfterDelay(succObject, 0.6f));;
@@ -135,6 +137,7 @@ public class MovingBarController : MonoBehaviour
                     {
                         if (!succObject.activeSelf)
                         {
+                            Debug.Log(Vector3.Distance(movingBar.position, targetBar.position));
                             // 실패 조건 처리
                             failObject.SetActive(true);
                             StartCoroutine(HideAfterDelay(failObject, 0.6f));
