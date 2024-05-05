@@ -6,8 +6,10 @@ using System;
 public class RadioManager : MonoBehaviour
 {
     private static RadioManager _instance; // 싱글톤 인스턴스
-    public static event Action<int> StageChanged;
+    public static event Action<int> StageChanged; // 스테이지 변경 이벤트
     private int currentStage = 1; // 현재 스테이지 번호
+
+    // 게임 매니저의 인스턴스를 가져오는 프로퍼티
     public static RadioManager Instance
     {
         get
@@ -22,6 +24,7 @@ public class RadioManager : MonoBehaviour
         }
     }
 
+    // 현재 스테이지 번호를 반환하는 메서드
     public int GetCurrentStage()
     {
         return currentStage;
@@ -30,14 +33,14 @@ public class RadioManager : MonoBehaviour
     // 마우스 클릭 시 호출되는 메서드
     private void OnMouseDown()
     {
-        IncrementStage();
+        IncrementStage(); // 스테이지 증가
     }
 
     // 현재 스테이지를 증가시키고 콘솔에 출력하는 메서드
     public void IncrementStage()
     {
         ///여기에 1초 딜레이 넣어줘
-        currentStage++;
+        currentStage++; // 스테이지 증가
         Debug.Log("현재 스테이지 번호: " + currentStage);
 
         // 스테이지 변경 이벤트를 호출합니다.
@@ -69,20 +72,15 @@ public class RadioManager : MonoBehaviour
 
     // MovingBarController를 멤버 변수로 선언합니다.
     public MovingBarController movingBarController;
-    // public BallColorChanger stageColorController;
 
     void Start()
     {
         // MovingBarController를 초기화합니다.
         movingBarController = FindObjectOfType<MovingBarController>();
-        // stageColorController = FindObjectOfType<BallColorChanger>();
 
-        // MovingBarController가 null이 아닌 경우에만 설정합니다.
         if (movingBarController != null)
         {
-            // 필요한 설정을 수행합니다.
-            // 예를 들어, speed 값을 변경할 수 있습니다.
-            // movingBarController.speed = 2.0f;
+            // 추가적인 초기화가 필요한 경우 여기에 작성합니다.
         }
         else
         {
@@ -92,7 +90,7 @@ public class RadioManager : MonoBehaviour
 
     void Update()
     {
-        // 필요한 경우 MovingBarController의 Update 함수를 호출합니다.
+        // 현재 스테이지가 3 이하인 경우 MovingBarController의 Update 함수를 호출합니다.
         if (currentStage <= 3)
         {
             if (movingBarController != null)
@@ -100,13 +98,9 @@ public class RadioManager : MonoBehaviour
                 movingBarController.Update();
             }
         }
-        else{
-            Debug.Log("끝");
-            movingBarController.setMusic();
-
+        else
+        {
+            movingBarController.setMusic(); // 스테이지가 3을 초과하면 노래 씬으로 전환합니다.
         }
-        Debug.Log("현재 스테이지 번호: " + currentStage);
-        //뮤직 씬으로 넘어가야 함
-
     }
 }
