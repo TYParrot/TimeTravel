@@ -73,6 +73,8 @@ public class RadioManager : MonoBehaviour
 
     void Start()
     {
+        Managers.Game.SceneSetting();
+
         // MovingBarController를 초기화합니다.
         movingBarController = FindObjectOfType<MovingBarController>();
         // stageColorController = FindObjectOfType<BallColorChanger>();
