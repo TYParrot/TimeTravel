@@ -11,43 +11,47 @@ public class ButtonInput : MonoBehaviour
 
     public TelephoneManager ManageScriptInstance;
 
+    public UI_Telephone UiScriptInstance;
+
     public void Clicked0()
     {
-        // ÇöÀç
+        // ï¿½ï¿½ï¿½ï¿½
         string currentNum = viewnum.text;
 
-        // Ãß°¡
+        // ï¿½ß°ï¿½
         string additionalNum = "0";
 
-        // º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½
         viewnum.text = currentNum + additionalNum;
 
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å© ÇÏ°í ¹ÝÀÀ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å© ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "Ã¹ ½ÃÀÛÀº Áö¿ª¹øÈ£·Î ½ÃÀÛÇØ¾ßÇØ ¾È»êÀÇ Áö¿ª ¹øÈ£´Â '0345' ¾ß";
+                viewmessage.text = "Ã¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½È»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ '0345' ï¿½ï¿½";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "ÀÌÁ¦ ÀüÈ­°É°í ½ÍÀº ¹øÈ£¸¦ ÀÔ·ÂÇØºÁ";
+                viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½É°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Øºï¿½";
             }
         }
-        // "-"Ãß°¡ÇÏ°í ¹ÝÀÀ
+        // "-"ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "ÀßÇÏ°í ÀÖ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö¾ï¿½!";
         }
 
         if (viewnum.text.Length == 19)
         {
             SoundPlay();
 
-            viewmessage.text = "°í¸¶¿ö ´öºÐ¿¡ ´Ù½Ã ¿òÁ÷ÀÏ ¼ö ÀÖ°Ô µÆ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¿ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½Æ¾ï¿½!";
+
+            Clear();
 
 
 
@@ -57,41 +61,43 @@ public class ButtonInput : MonoBehaviour
 
     public void Clicked1()
     {
-        // ÇöÀç
+        // ï¿½ï¿½ï¿½ï¿½
         string currentNum = viewnum.text;
 
-        // Ãß°¡
+        // ï¿½ß°ï¿½
         string additionalNum = "1";
 
-        // º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½
         viewnum.text = currentNum + additionalNum;
 
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å© ÇÏ°í ¹ÝÀÀ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å© ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "Ã¹ ½ÃÀÛÀº Áö¿ª¹øÈ£·Î ½ÃÀÛÇØ¾ßÇØ ¾È»êÀÇ Áö¿ª ¹øÈ£´Â '0345' ¾ß";
+                viewmessage.text = "Ã¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½È»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ '0345' ï¿½ï¿½";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "ÀÌÁ¦ ÀüÈ­°É°í ½ÍÀº ¹øÈ£¸¦ ÀÔ·ÂÇØºÁ";
+                viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½É°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Øºï¿½";
             }
         }
-        // "-"Ãß°¡ÇÏ°í ¹ÝÀÀ
+        // "-"ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "ÀßÇÏ°í ÀÖ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö¾ï¿½!";
         }
 
         if (viewnum.text.Length == 19)
         {
             SoundPlay();
 
-            viewmessage.text = "°í¸¶¿ö ´öºÐ¿¡ ´Ù½Ã ¿òÁ÷ÀÏ ¼ö ÀÖ°Ô µÆ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¿ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½Æ¾ï¿½!";
+
+            Clear();
 
         }
 
@@ -99,337 +105,353 @@ public class ButtonInput : MonoBehaviour
 
     public void Clicked2()
     {
-        // ÇöÀç
+        // ï¿½ï¿½ï¿½ï¿½
         string currentNum = viewnum.text;
 
-        // Ãß°¡
+        // ï¿½ß°ï¿½
         string additionalNum = "2";
 
-        // º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½
         viewnum.text = currentNum + additionalNum;
 
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å© ÇÏ°í ¹ÝÀÀ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å© ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "Ã¹ ½ÃÀÛÀº Áö¿ª¹øÈ£·Î ½ÃÀÛÇØ¾ßÇØ ¾È»êÀÇ Áö¿ª ¹øÈ£´Â '0345' ¾ß";
+                viewmessage.text = "Ã¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½È»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ '0345' ï¿½ï¿½";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "ÀÌÁ¦ ÀüÈ­°É°í ½ÍÀº ¹øÈ£¸¦ ÀÔ·ÂÇØºÁ";
+                viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½É°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Øºï¿½";
             }
         }
-        // "-"Ãß°¡ÇÏ°í ¹ÝÀÀ
+        // "-"ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "ÀßÇÏ°í ÀÖ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö¾ï¿½!";
         }
 
         if (viewnum.text.Length == 19)
         {
             SoundPlay();
 
-            viewmessage.text = "°í¸¶¿ö ´öºÐ¿¡ ´Ù½Ã ¿òÁ÷ÀÏ ¼ö ÀÖ°Ô µÆ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¿ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½Æ¾ï¿½!";
+
+            Clear();
 
         }
 
     }
     public void Clicked3()
     {
-        // ÇöÀç
+        // ï¿½ï¿½ï¿½ï¿½
         string currentNum = viewnum.text;
 
-        // Ãß°¡
+        // ï¿½ß°ï¿½
         string additionalNum = "3";
 
-        // º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½
         viewnum.text = currentNum + additionalNum;
 
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å© ÇÏ°í ¹ÝÀÀ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å© ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "Ã¹ ½ÃÀÛÀº Áö¿ª¹øÈ£·Î ½ÃÀÛÇØ¾ßÇØ ¾È»êÀÇ Áö¿ª ¹øÈ£´Â '0345' ¾ß";
+                viewmessage.text = "Ã¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½È»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ '0345' ï¿½ï¿½";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "ÀÌÁ¦ ÀüÈ­°É°í ½ÍÀº ¹øÈ£¸¦ ÀÔ·ÂÇØºÁ";
+                viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½É°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Øºï¿½";
             }
         }
-        // "-"Ãß°¡ÇÏ°í ¹ÝÀÀ
+        // "-"ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "ÀßÇÏ°í ÀÖ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö¾ï¿½!";
         }
 
         if (viewnum.text.Length == 19)
         {
             SoundPlay();
 
-            viewmessage.text = "°í¸¶¿ö ´öºÐ¿¡ ´Ù½Ã ¿òÁ÷ÀÏ ¼ö ÀÖ°Ô µÆ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¿ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½Æ¾ï¿½!";
+
+            Clear();
 
         }
 
     }
     public void Clicked4()
     {
-        // ÇöÀç
+        // ï¿½ï¿½ï¿½ï¿½
         string currentNum = viewnum.text;
 
-        // Ãß°¡
+        // ï¿½ß°ï¿½
         string additionalNum = "4";
 
-        // º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½
         viewnum.text = currentNum + additionalNum;
 
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å©
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å© ÇÏ°í ¹ÝÀÀ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å©
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å© ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "Ã¹ ½ÃÀÛÀº Áö¿ª¹øÈ£·Î ½ÃÀÛÇØ¾ßÇØ ¾È»êÀÇ Áö¿ª ¹øÈ£´Â '0345' ¾ß";
+                viewmessage.text = "Ã¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½È»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ '0345' ï¿½ï¿½";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "ÀÌÁ¦ ÀüÈ­°É°í ½ÍÀº ¹øÈ£¸¦ ÀÔ·ÂÇØºÁ";
+                viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½É°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Øºï¿½";
             }
         }
-        // "-"Ãß°¡ÇÏ°í ¹ÝÀÀ
+        // "-"ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "ÀßÇÏ°í ÀÖ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö¾ï¿½!";
         }
 
         if (viewnum.text.Length == 19)
         {
             SoundPlay();
 
-            viewmessage.text = "°í¸¶¿ö ´öºÐ¿¡ ´Ù½Ã ¿òÁ÷ÀÏ ¼ö ÀÖ°Ô µÆ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¿ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½Æ¾ï¿½!";
+
+            Clear();
 
         }
     }
     public void Clicked5()
     {
-        // ÇöÀç
+        // ï¿½ï¿½ï¿½ï¿½
         string currentNum = viewnum.text;
 
-        // Ãß°¡
+        // ï¿½ß°ï¿½
         string additionalNum = "5";
 
-        // º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½
         viewnum.text = currentNum + additionalNum;
 
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å©
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å© ÇÏ°í ¹ÝÀÀ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å©
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å© ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "Ã¹ ½ÃÀÛÀº Áö¿ª¹øÈ£·Î ½ÃÀÛÇØ¾ßÇØ ¾È»êÀÇ Áö¿ª ¹øÈ£´Â '0345' ¾ß";
+                viewmessage.text = "Ã¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½È»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ '0345' ï¿½ï¿½";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "ÀÌÁ¦ ÀüÈ­°É°í ½ÍÀº ¹øÈ£¸¦ ÀÔ·ÂÇØºÁ";
+                viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½É°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Øºï¿½";
             }
         }
-        // "-"Ãß°¡ÇÏ°í ¹ÝÀÀ
+        // "-"ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "ÀßÇÏ°í ÀÖ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö¾ï¿½!";
         }
 
         if (viewnum.text.Length == 19)
         {
             SoundPlay();
 
-            viewmessage.text = "°í¸¶¿ö ´öºÐ¿¡ ´Ù½Ã ¿òÁ÷ÀÏ ¼ö ÀÖ°Ô µÆ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¿ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½Æ¾ï¿½!";
+
+            Clear();
 
         }
 
     }
     public void Clicked6()
     {
-        // ÇöÀç
+        // ï¿½ï¿½ï¿½ï¿½
         string currentNum = viewnum.text;
 
-        // Ãß°¡
+        // ï¿½ß°ï¿½
         string additionalNum = "6";
 
-        // º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½
         viewnum.text = currentNum + additionalNum;
 
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å© ÇÏ°í ¹ÝÀÀ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å© ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "Ã¹ ½ÃÀÛÀº Áö¿ª¹øÈ£·Î ½ÃÀÛÇØ¾ßÇØ ¾È»êÀÇ Áö¿ª ¹øÈ£´Â '0345' ¾ß";
+                viewmessage.text = "Ã¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½È»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ '0345' ï¿½ï¿½";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "ÀÌÁ¦ ÀüÈ­°É°í ½ÍÀº ¹øÈ£¸¦ ÀÔ·ÂÇØºÁ";
+                viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½É°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Øºï¿½";
             }
         }
-        // "-"Ãß°¡ÇÏ°í ¹ÝÀÀ
+        // "-"ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "ÀßÇÏ°í ÀÖ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö¾ï¿½!";
         }
 
         if (viewnum.text.Length == 19)
         {
             SoundPlay();
 
-            viewmessage.text = "°í¸¶¿ö ´öºÐ¿¡ ´Ù½Ã ¿òÁ÷ÀÏ ¼ö ÀÖ°Ô µÆ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¿ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½Æ¾ï¿½!";
+
+            Clear();
 
         }
     }
     public void Clicked7()
     {
-        // ÇöÀç
+        // ï¿½ï¿½ï¿½ï¿½
         string currentNum = viewnum.text;
 
-        // Ãß°¡
+        // ï¿½ß°ï¿½
         string additionalNum = "7";
 
-        // º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½
         viewnum.text = currentNum + additionalNum;
 
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å© ÇÏ°í ¹ÝÀÀ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å© ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "Ã¹ ½ÃÀÛÀº Áö¿ª¹øÈ£·Î ½ÃÀÛÇØ¾ßÇØ ¾È»êÀÇ Áö¿ª ¹øÈ£´Â '0345' ¾ß";
+                viewmessage.text = "Ã¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½È»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ '0345' ï¿½ï¿½";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "ÀÌÁ¦ ÀüÈ­°É°í ½ÍÀº ¹øÈ£¸¦ ÀÔ·ÂÇØºÁ";
+                viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½É°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Øºï¿½";
             }
         }
-        // "-"Ãß°¡ÇÏ°í ¹ÝÀÀ
+        // "-"ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "ÀßÇÏ°í ÀÖ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö¾ï¿½!";
         }
 
         if (viewnum.text.Length == 19)
         {
             SoundPlay();
 
-            viewmessage.text = "°í¸¶¿ö ´öºÐ¿¡ ´Ù½Ã ¿òÁ÷ÀÏ ¼ö ÀÖ°Ô µÆ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¿ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½Æ¾ï¿½!";
+
+            Clear();
 
         }
     }
     public void Clicked8()
     {
-        // ÇöÀç
+        // ï¿½ï¿½ï¿½ï¿½
         string currentNum = viewnum.text;
 
-        // Ãß°¡
+        // ï¿½ß°ï¿½
         string additionalNum = "8";
 
-        // º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½
         viewnum.text = currentNum + additionalNum;
 
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å© ÇÏ°í ¹ÝÀÀ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å© ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "Ã¹ ½ÃÀÛÀº Áö¿ª¹øÈ£·Î ½ÃÀÛÇØ¾ßÇØ ¾È»êÀÇ Áö¿ª ¹øÈ£´Â '0345' ¾ß";
+                viewmessage.text = "Ã¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½È»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ '0345' ï¿½ï¿½";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "ÀÌÁ¦ ÀüÈ­°É°í ½ÍÀº ¹øÈ£¸¦ ÀÔ·ÂÇØºÁ";
+                viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½É°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Øºï¿½";
             }
         }
-        // "-"Ãß°¡ÇÏ°í ¹ÝÀÀ
+        // "-"ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "ÀßÇÏ°í ÀÖ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö¾ï¿½!";
         }
 
         if (viewnum.text.Length == 19)
         {
             SoundPlay();
 
-            viewmessage.text = "°í¸¶¿ö ´öºÐ¿¡ ´Ù½Ã ¿òÁ÷ÀÏ ¼ö ÀÖ°Ô µÆ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¿ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½Æ¾ï¿½!";
+
+            Clear();
 
         }
     }
     public void Clicked9()
     {
-        // ÇöÀç
+        // ï¿½ï¿½ï¿½ï¿½
         string currentNum = viewnum.text;
 
-        // Ãß°¡
+        // ï¿½ß°ï¿½
         string additionalNum = "9";
 
-        // º¯°æ
+        // ï¿½ï¿½ï¿½ï¿½
         viewnum.text = currentNum + additionalNum;
 
-        //Áö¿ª¹øÈ£¸¦ Àß ÀÔ·ÂÇß´ÂÁö Ã¼Å© ÇÏ°í ¹ÝÀÀ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å© ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "Ã¹ ½ÃÀÛÀº Áö¿ª¹øÈ£·Î ½ÃÀÛÇØ¾ßÇØ ¾È»êÀÇ Áö¿ª ¹øÈ£´Â '0345' ¾ß";
+                viewmessage.text = "Ã¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½È»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ '0345' ï¿½ï¿½";
             }
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "ÀÌÁ¦ ÀüÈ­°É°í ½ÍÀº ¹øÈ£¸¦ ÀÔ·ÂÇØºÁ";
+                viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½É°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Øºï¿½";
             }
         }
-        // "-"Ãß°¡ÇÏ°í ¹ÝÀÀ
+        // "-"ï¿½ß°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
-            viewmessage.text = "ÀßÇÏ°í ÀÖ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö¾ï¿½!";
         }
 
         if (viewnum.text.Length == 19)
         {
             SoundPlay();
 
-            viewmessage.text = "°í¸¶¿ö ´öºÐ¿¡ ´Ù½Ã ¿òÁ÷ÀÏ ¼ö ÀÖ°Ô µÆ¾î!";
+            viewmessage.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¿ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½Æ¾ï¿½!";
+
+            Clear();
 
         }
     }
-    //¼Ò¸® Àç»ý
+    //ï¿½Ò¸ï¿½ ï¿½ï¿½ï¿½
     public void SoundPlay()
     {
         string CurrentNum = viewnum.text;
 
         if(CurrentNum.Length == 19)
         {
-            //»ç¿îµå ½ºÅ©¸³Æ® ÇÔ¼ö È£Ãâ
+            //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ® ï¿½Ô¼ï¿½ È£ï¿½ï¿½
             if (SoundScriptInstance != null)
             {
                 SoundScriptInstance.Play();
@@ -437,12 +459,20 @@ public class ButtonInput : MonoBehaviour
         }
     }
 
-    //¾À ¸Å´ÏÀú¿¡ Á¢±Ù
+    //ï¿½ï¿½ ï¿½Å´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public void ExitButton()
     {
         if (ManageScriptInstance != null)
         {
             ManageScriptInstance.ClearGame();
+        }
+    }
+
+    public void Clear()
+    {
+        if(UiScriptInstance != null)
+        {
+            UiScriptInstance.PlayAllClear();
         }
     }
 }
