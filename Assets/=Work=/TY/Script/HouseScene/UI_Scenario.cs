@@ -12,7 +12,6 @@ public class UI_Scenario : MonoBehaviour
     public GameObject AllClearPanel;
 
     //모두 클리어시 Start씬으로 돌아가는 버튼
-    //게임 플레이 중간 홈버튼은 아직 없음.
     public GameObject GoHomeBtn;
 
 
@@ -25,7 +24,6 @@ public class UI_Scenario : MonoBehaviour
         PlayRadio();
         PlayMicrowave();
         PlayTelephone();
-        PlayAllClear();
     }
 
     void PlayIntro(){
@@ -98,9 +96,8 @@ public class UI_Scenario : MonoBehaviour
     }
     
     void PlayAllClear(){
-        if(Managers.Game.ReturnMicrowave() && Managers.Game.ReturnRadio() && Managers.Game.ReturnTelephone() && Managers.Scenario.ReturnPlayRadio() == false){
 
-            Managers.Scenario.ClearPlayAllClear(true);
+        if(Managers.Game.ReturnMicrowave() && Managers.Game.ReturnRadio() && Managers.Game.ReturnTelephone() && Managers.Scenario.ReturnPlayAllClear() == false){
 
             AllClearPanel.SetActive(true);
 
@@ -111,8 +108,9 @@ public class UI_Scenario : MonoBehaviour
             }
 
             StartCoroutine(PlayMessages());
-
             StartCoroutine(ShowGoHomeBtn());
+            Managers.Scenario.ClearPlayAllClear(true);
+
         }
 
         
@@ -125,11 +123,13 @@ public class UI_Scenario : MonoBehaviour
 
             // 재생 후 대기
             yield return new WaitForSeconds(5.0f); // 재생 시간
-
             msg.SetActive(false); // 메시지 비활성화
         }
 
         DeactivateAll();
+        
+        yield return new WaitForSeconds(1.0f);
+        PlayAllClear();
     }
 
     IEnumerator ShowGoHomeBtn(){
