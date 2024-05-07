@@ -40,7 +40,7 @@ public class UI_Telephone : MonoBehaviour
         }
     }
     
-    void PlayAllClear(){
+    public void PlayAllClear(){
 
         AllClearPanel.SetActive(true);
 
