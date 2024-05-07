@@ -23,24 +23,20 @@ public class UI_Telephone : MonoBehaviour
     }
 
     void PlayIntro(){
-        if(Managers.Scenario.ReturnPlayIntro() == false){
-            Managers.Scenario.ClearPlayIntro(true);
+        IntroPanel.SetActive(true);
 
-            IntroPanel.SetActive(true);
-
-            // 부모 오브젝트의 자식 오브젝트들을 배열에 저장
-            Msgs = new GameObject[IntroPanel.transform.childCount];
-            for (int i = 0; i < IntroPanel.transform.childCount; i++)
-            {
-                Msgs[i] = IntroPanel.transform.GetChild(i).gameObject;
-            }
-
-            // 코루틴을 통해 메시지 재생 시작
-            StartCoroutine(PlayMessages());
+        // 부모 오브젝트의 자식 오브젝트들을 배열에 저장
+        Msgs = new GameObject[IntroPanel.transform.childCount];
+        for (int i = 0; i < IntroPanel.transform.childCount; i++)
+        {
+            Msgs[i] = IntroPanel.transform.GetChild(i).gameObject;
         }
+
+        // 코루틴을 통해 메시지 재생 시작
+        StartCoroutine(PlayMessages());
     }
     
-    void PlayAllClear(){
+    public void PlayAllClear(){
 
         AllClearPanel.SetActive(true);
 
