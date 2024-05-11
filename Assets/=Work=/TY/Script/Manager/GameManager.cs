@@ -62,25 +62,20 @@ namespace Game
             {
                 case 0:
                     Managers.Game.Init();
-                    Debug.Log("switch씬 0번 호출");
                     break;
                 case 1:
                     Managers.Game.FindPlayer();
                     Managers.Game.LoadPlayer();
                     Managers.Game.ShowClearList();
-                    Debug.Log("swtich 1번 호출");
                     break;
                 case 2:
                     Managers.Game.FindPlayer();
-                    Managers.Game.LockPlayerMovement();
                     break;
                 case 3:
                     Managers.Game.FindPlayer();
-                    Managers.Game.LockPlayerMovement();
                     break;
                 case 4:
                     Managers.Game.FindPlayer();
-                    Managers.Game.LockPlayerMovement();
                     break;
             }
         }
@@ -169,11 +164,6 @@ namespace Game
             //시뮬레이터를 player로 설정해놨음. 추후에 변경해야함.
             player = GameObject.Find("XR Origin (XR Rig)");
             Debug.Log("플레이어 확인");
-        }
-
-        //플레이어의 회전 및 이동을 잠그는 메소드(1을 제외한 씬에서 사용될 예정)
-        private void LockPlayerMovement(){
-
         }
 
     }

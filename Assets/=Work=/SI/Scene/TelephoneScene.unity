@@ -1006,8 +1006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b4bb7ece52a124a94f18745968b259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExitButton: {fileID: 479877064}
-  Tel: {fileID: 1758515837}
 --- !u!1 &574488032
 GameObject:
   m_ObjectHideFlags: 0
@@ -4919,6 +4917,7 @@ MonoBehaviour:
   viewmessage: {fileID: 320038998}
   SoundScriptInstance: {fileID: 7645651307688522614}
   ManageScriptInstance: {fileID: 335702888}
+  UiScriptInstance: {fileID: 8995869944212004814}
 --- !u!1 &2032002816
 GameObject:
   m_ObjectHideFlags: 0
