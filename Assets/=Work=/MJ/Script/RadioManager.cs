@@ -6,6 +6,7 @@ using System;
 public class RadioManager : MonoBehaviour
 {
     private static RadioManager _instance; // 싱글톤 인스턴스
+    // UI_Radio uiRadioInstance = FindObjectOfType<UI_Radio>();
     public static event Action<int> StageChanged; // 스테이지 변경 이벤트
     private int currentStage = 1; // 현재 스테이지 번호
 
@@ -72,6 +73,8 @@ public class RadioManager : MonoBehaviour
 
     // MovingBarController를 멤버 변수로 선언합니다.
     public MovingBarController movingBarController;
+    public UI_Radio uiRadioInstance;
+
 
     void Start()
     {
@@ -79,6 +82,7 @@ public class RadioManager : MonoBehaviour
 
         // MovingBarController를 초기화합니다.
         movingBarController = FindObjectOfType<MovingBarController>();
+        uiRadioInstance = FindObjectOfType<UI_Radio>();
 
         if (movingBarController != null)
         {
@@ -102,6 +106,8 @@ public class RadioManager : MonoBehaviour
         }
         else
         {
+            
+            uiRadioInstance.PlayAllClear();
             movingBarController.setMusic(); // 스테이지가 3을 초과하면 노래 씬으로 전환합니다.
         }
     }

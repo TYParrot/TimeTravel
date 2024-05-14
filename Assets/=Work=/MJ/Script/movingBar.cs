@@ -241,7 +241,7 @@ public class MovingBarController : MonoBehaviour
     }
 
     public void setMusic()
-    {
+    {  
         // 게임 씬 비활성화 및 노래 씬 활성화
         gameSceneObject.SetActive(false);
         musicSceneObject.SetActive(true);
