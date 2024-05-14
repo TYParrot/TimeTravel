@@ -6,7 +6,7 @@ public class Spin : MonoBehaviour
 {
     public Transform Pannel;
 
-    private bool IsSpinning = false; // È¸Àü ÁßÀÎÁö Ã¼Å©ÇÏ´Â º¯¼ö
+    private bool IsSpinning = false; // È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     public void Click_To_Spin0()
     {
@@ -20,15 +20,15 @@ public class Spin : MonoBehaviour
     {
         IsSpinning = true;
 
-        //°¢µµ ¼³Á¤
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float StartAngle = Pannel.localRotation.eulerAngles.z;
         float CurrentAngle = StartAngle;
         float TargetAngle = StartAngle + 335f;
 
-        //È¸Àü ¼Óµµ
-        float SpinSpeed = 200f;
+        //È¸ï¿½ï¿½ ï¿½Óµï¿½
+        float SpinSpeed = 500f;
 
-        //È¸Àü ½ÃÀÛ
+        //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle < TargetAngle)
         {
             CurrentAngle += SpinSpeed * Time.deltaTime;
@@ -36,13 +36,20 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
-        // È¸Àü ÈÄ ´ë±â
+        // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(0.2f);
 
-        //È¸Àü ÈÄ º¹±Í
+        //È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle > StartAngle)
         {
             CurrentAngle -= SpinSpeed * Time.deltaTime;
+
+            if (CurrentAngle <= StartAngle)
+            {
+                CurrentAngle = StartAngle;
+            }
+
+
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
@@ -62,15 +69,15 @@ public class Spin : MonoBehaviour
     {
         IsSpinning = true;
 
-        //°¢µµ ¼³Á¤
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float StartAngle = Pannel.localRotation.eulerAngles.z;
         float CurrentAngle = StartAngle;
         float TargetAngle = StartAngle + 68f;
 
-        //È¸Àü ¼Óµµ
-        float SpinSpeed = 200f;
+        //È¸ï¿½ï¿½ ï¿½Óµï¿½
+        float SpinSpeed = 500f;
 
-        //È¸Àü ½ÃÀÛ
+        //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle < TargetAngle)
         {
             CurrentAngle += SpinSpeed * Time.deltaTime;
@@ -78,13 +85,20 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
-        // È¸Àü ÈÄ ´ë±â
+        // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(0.2f);
 
-        //È¸Àü ÈÄ º¹±Í
+        //È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle > StartAngle)
         {
             CurrentAngle -= SpinSpeed * Time.deltaTime;
+
+            if (CurrentAngle <= StartAngle)
+            {
+                CurrentAngle = StartAngle;
+            }
+
+
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
@@ -104,15 +118,15 @@ public class Spin : MonoBehaviour
     {
         IsSpinning = true;
 
-        //°¢µµ ¼³Á¤
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float StartAngle = Pannel.localRotation.eulerAngles.z;
         float CurrentAngle = StartAngle;
         float TargetAngle = StartAngle + 98f;
 
-        //È¸Àü ¼Óµµ
-        float SpinSpeed = 200f;
+        //È¸ï¿½ï¿½ ï¿½Óµï¿½
+        float SpinSpeed = 500f;
 
-        //È¸Àü ½ÃÀÛ
+        //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle < TargetAngle)
         {
             CurrentAngle += SpinSpeed * Time.deltaTime;
@@ -120,13 +134,20 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
-        // È¸Àü ÈÄ ´ë±â
+        // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(0.2f);
 
-        //È¸Àü ÈÄ º¹±Í
+        //È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle > StartAngle)
         {
             CurrentAngle -= SpinSpeed * Time.deltaTime;
+
+            if (CurrentAngle <= StartAngle)
+            {
+                CurrentAngle = StartAngle;
+            }
+
+
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
@@ -146,15 +167,15 @@ public class Spin : MonoBehaviour
     {
         IsSpinning = true;
 
-        //°¢µµ ¼³Á¤
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float StartAngle = Pannel.localRotation.eulerAngles.z;
         float CurrentAngle = StartAngle;
         float TargetAngle = StartAngle + 128f;
 
-        //È¸Àü ¼Óµµ
-        float SpinSpeed = 200f;
+        //È¸ï¿½ï¿½ ï¿½Óµï¿½
+        float SpinSpeed = 500f;
 
-        //È¸Àü ½ÃÀÛ
+        //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle < TargetAngle)
         {
             CurrentAngle += SpinSpeed * Time.deltaTime;
@@ -162,13 +183,20 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
-        // È¸Àü ÈÄ ´ë±â
+        // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(0.2f);
 
-        //È¸Àü ÈÄ º¹±Í
+        //È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle > StartAngle)
         {
             CurrentAngle -= SpinSpeed * Time.deltaTime;
+
+            if (CurrentAngle <= StartAngle)
+            {
+                CurrentAngle = StartAngle;
+            }
+
+
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
@@ -188,15 +216,15 @@ public class Spin : MonoBehaviour
     {
         IsSpinning = true;
 
-        //°¢µµ ¼³Á¤
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float StartAngle = Pannel.localRotation.eulerAngles.z;
         float CurrentAngle = StartAngle;
         float TargetAngle = StartAngle + 158f;
 
-        //È¸Àü ¼Óµµ
-        float SpinSpeed = 200f;
+        //È¸ï¿½ï¿½ ï¿½Óµï¿½
+        float SpinSpeed = 500f;
 
-        //È¸Àü ½ÃÀÛ
+        //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle < TargetAngle)
         {
             CurrentAngle += SpinSpeed * Time.deltaTime;
@@ -204,13 +232,20 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
-        // È¸Àü ÈÄ ´ë±â
+        // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(0.2f);
 
-        //È¸Àü ÈÄ º¹±Í
+        //È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle > StartAngle)
         {
             CurrentAngle -= SpinSpeed * Time.deltaTime;
+
+            if (CurrentAngle <= StartAngle)
+            {
+                CurrentAngle = StartAngle;
+            }
+
+
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
@@ -230,15 +265,15 @@ public class Spin : MonoBehaviour
     {
         IsSpinning = true;
 
-        //°¢µµ ¼³Á¤
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float StartAngle = Pannel.localRotation.eulerAngles.z;
         float CurrentAngle = StartAngle;
         float TargetAngle = StartAngle + 188f;
 
-        //È¸Àü ¼Óµµ
-        float SpinSpeed = 200f;
+        //È¸ï¿½ï¿½ ï¿½Óµï¿½
+        float SpinSpeed = 500f;
 
-        //È¸Àü ½ÃÀÛ
+        //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle < TargetAngle)
         {
             CurrentAngle += SpinSpeed * Time.deltaTime;
@@ -246,13 +281,19 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
-        // È¸Àü ÈÄ ´ë±â
+        // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(0.2f);
 
-        //È¸Àü ÈÄ º¹±Í
+        //È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle > StartAngle)
         {
             CurrentAngle -= SpinSpeed * Time.deltaTime;
+
+            if (CurrentAngle <= StartAngle)
+            {
+                CurrentAngle = StartAngle;
+            }
+
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
@@ -272,15 +313,15 @@ public class Spin : MonoBehaviour
     {
         IsSpinning = true;
 
-        //°¢µµ ¼³Á¤
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float StartAngle = Pannel.localRotation.eulerAngles.z;
         float CurrentAngle = StartAngle;
         float TargetAngle = StartAngle + 218f;
 
-        //È¸Àü ¼Óµµ
-        float SpinSpeed = 200f;
+        //È¸ï¿½ï¿½ ï¿½Óµï¿½
+        float SpinSpeed = 500f;
 
-        //È¸Àü ½ÃÀÛ
+        //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle < TargetAngle)
         {
             CurrentAngle += SpinSpeed * Time.deltaTime;
@@ -288,13 +329,19 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
-        // È¸Àü ÈÄ ´ë±â
+        // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(0.2f);
 
-        //È¸Àü ÈÄ º¹±Í
+        //È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle > StartAngle)
         {
             CurrentAngle -= SpinSpeed * Time.deltaTime;
+
+            if (CurrentAngle <= StartAngle)
+            {
+                CurrentAngle = StartAngle;
+            }
+
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
@@ -314,15 +361,15 @@ public class Spin : MonoBehaviour
     {
         IsSpinning = true;
 
-        //°¢µµ ¼³Á¤
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float StartAngle = Pannel.localRotation.eulerAngles.z;
         float CurrentAngle = StartAngle;
-        float TargetAngle = StartAngle + 248f;
+        float TargetAngle = StartAngle + 245f;
 
-        //È¸Àü ¼Óµµ
-        float SpinSpeed = 200f;
+        //È¸ï¿½ï¿½ ï¿½Óµï¿½
+        float SpinSpeed = 500f;
 
-        //È¸Àü ½ÃÀÛ
+        //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle < TargetAngle)
         {
             CurrentAngle += SpinSpeed * Time.deltaTime;
@@ -330,13 +377,19 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
-        // È¸Àü ÈÄ ´ë±â
+        // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(0.2f);
 
-        //È¸Àü ÈÄ º¹±Í
+        //È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle > StartAngle)
         {
             CurrentAngle -= SpinSpeed * Time.deltaTime;
+
+            if (CurrentAngle <= StartAngle)
+            {
+                CurrentAngle = StartAngle;
+            }
+
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
@@ -356,15 +409,15 @@ public class Spin : MonoBehaviour
     {
         IsSpinning = true;
 
-        //°¢µµ ¼³Á¤
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float StartAngle = Pannel.localRotation.eulerAngles.z;
         float CurrentAngle = StartAngle;
         float TargetAngle = StartAngle + 275f;
 
-        //È¸Àü ¼Óµµ
-        float SpinSpeed = 200f;
+        //È¸ï¿½ï¿½ ï¿½Óµï¿½
+        float SpinSpeed = 500f;
 
-        //È¸Àü ½ÃÀÛ
+        //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle < TargetAngle)
         {
             CurrentAngle += SpinSpeed * Time.deltaTime;
@@ -372,13 +425,19 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
-        // È¸Àü ÈÄ ´ë±â
+        // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(0.2f);
 
-        //È¸Àü ÈÄ º¹±Í
+        //È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle > StartAngle)
         {
             CurrentAngle -= SpinSpeed * Time.deltaTime;
+
+            if (CurrentAngle <= StartAngle)
+            {
+                CurrentAngle = StartAngle;
+            }
+
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
@@ -398,15 +457,15 @@ public class Spin : MonoBehaviour
     {
         IsSpinning = true;
 
-        //°¢µµ ¼³Á¤
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float StartAngle = Pannel.localRotation.eulerAngles.z;
         float CurrentAngle = StartAngle;
         float TargetAngle = StartAngle + 305f;
 
-        //È¸Àü ¼Óµµ
-        float SpinSpeed = 200f;
+        //È¸ï¿½ï¿½ ï¿½Óµï¿½
+        float SpinSpeed = 500f;
 
-        //È¸Àü ½ÃÀÛ
+        //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle < TargetAngle)
         {
             CurrentAngle += SpinSpeed * Time.deltaTime;
@@ -414,13 +473,19 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
-        // È¸Àü ÈÄ ´ë±â
+        // È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(0.2f);
 
-        //È¸Àü ÈÄ º¹±Í
+        //È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (CurrentAngle > StartAngle)
         {
             CurrentAngle -= SpinSpeed * Time.deltaTime;
+
+            if (CurrentAngle <= StartAngle)
+            {
+                CurrentAngle = StartAngle;
+            }
+
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
