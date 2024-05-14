@@ -11,7 +11,7 @@ public class StartManager : MonoBehaviour
     }
 
     public void StartBtn(){
-        Managers.Game.changeScene(1);
+        Managers.Game.changeScene(5);
     }
 
     public void ExitBtn(){
