@@ -6,15 +6,16 @@ TagManager:
   tags:
   - Trail
   - Canvas
+  - SamplesInfoPanel
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Popup
   - Water
   - UI
   - Player
-  - 
+  - Micro
   - Drawing
   - 
   - 
@@ -42,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2522525367
     locked: 0
