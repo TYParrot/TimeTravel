@@ -14,7 +14,7 @@ public class ButtonInput : MonoBehaviour
     public UI_Telephone UiScriptInstance;
 
     public void Clicked0()
-    {
+    {   
         if (viewnum.text.Length < 19)
         {
             // ����
