@@ -16,21 +16,11 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    public void Pause(){
-        Time.timeScale = 0f;
-        isPause = true;
-    }
-
-    public void Resume(){
-        Time.timeScale = 1.0f;
-        isPause = false;
-    }
-
     public void Cancel(){
         CheckPanel.SetActive(false);
     }
 
-    public void GoHome(){
+    public void GoStart(){
         Managers.Game.changeScene(0);
     }
 

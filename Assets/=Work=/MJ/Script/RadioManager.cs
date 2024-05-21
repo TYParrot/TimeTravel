@@ -10,6 +10,8 @@ public class RadioManager : MonoBehaviour
     public static event Action<int> StageChanged; // 스테이지 변경 이벤트
     private int currentStage = 1; // 현재 스테이지 번호
 
+    private bool playAllClear = false;
+
     // 게임 매니저의 인스턴스를 가져오는 프로퍼티
     public static RadioManager Instance
     {
@@ -106,9 +108,11 @@ public class RadioManager : MonoBehaviour
         }
         else
         {
-            
-            uiRadioInstance.PlayAllClear();
-            movingBarController.setMusic(); // 스테이지가 3을 초과하면 노래 씬으로 전환합니다.
+            if(!playAllClear){
+                playAllClear = true;
+                uiRadioInstance.PlayAllClear();
+                movingBarController.setMusic(); // 스테이지가 3을 초과하면 노래 씬으로 전환합니다.
+            }
         }
     }
 }
