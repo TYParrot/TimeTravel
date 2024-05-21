@@ -9,7 +9,7 @@ public class ProPlay : MonoBehaviour
 
     public float fadeInTime = 1.0f; // 페이드 인 시간
     public float fadeOutTime = 1.0f; // 페이드 아웃 시간
-    public float displayTime = 4.0f; // 화면에 표시되는 시간
+    private float displayTime = 6.0f; // 화면에 표시되는 시간
 
     void Start()
     {
