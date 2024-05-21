@@ -131,7 +131,7 @@ namespace Game
         }
 
         private void LoadPlayer(){
-            if(beforeIndex == 0){
+            if(beforeIndex == 5){
                 HousePlayerSetting();
                 Debug.Log("houseplayersetting 호출 완료");
             }else{

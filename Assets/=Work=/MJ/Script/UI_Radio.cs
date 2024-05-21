@@ -17,6 +17,7 @@ public class UI_Radio : MonoBehaviour
     private GameObject[] Msgs; 
     private bool isItStart = false;
     private int stage;
+    private bool playAllClear = false;
 
     void Start()
     {   
@@ -41,6 +42,7 @@ public class UI_Radio : MonoBehaviour
     public void PlayAllClear(){
 
         AllClearPanel.SetActive(true);
+        playAllClear = true;
 
         Msgs = new GameObject[AllClearPanel.transform.childCount];
         for (int i = 0; i < AllClearPanel.transform.childCount; i++)
@@ -60,7 +62,10 @@ public class UI_Radio : MonoBehaviour
 
             // 재생 후 대기
             yield return new WaitForSeconds(5.0f); // 재생 시간
-            msg.SetActive(false); // 메시지 비활성화
+            
+            if(!playAllClear){
+                msg.SetActive(false); // 메시지 비활성화
+            }
         }
 
         DeactivateAll();
@@ -82,7 +87,6 @@ public class UI_Radio : MonoBehaviour
 
     void DeactivateAll(){
         IntroPanel.SetActive(false);
-        AllClearPanel.SetActive(false);
         ExplainPanel.SetActive(false);
 
     }

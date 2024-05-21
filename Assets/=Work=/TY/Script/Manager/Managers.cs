@@ -16,7 +16,6 @@ public class Managers : Game.Helpers.Singleton<Managers>
     public static GameManager Game => Instance._game;
     public static ScenarioManager Scenario => Instance._scenario;
 
-    // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this);
