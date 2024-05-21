@@ -6,12 +6,17 @@ using TMPro;
 public class ButtonInput : MonoBehaviour
 {
     public TextMeshProUGUI viewnum, viewmessage;
-    
+
     public PlayQuickSound SoundScriptInstance;
 
     public TelephoneManager ManageScriptInstance;
 
     public UI_Telephone UiScriptInstance;
+
+    public AudioChange AudioScriptInstance;
+
+    public AudioClip clip1;
+    public AudioClip clip2;
 
     public void Clicked0()
     {
@@ -22,8 +27,10 @@ public class ButtonInput : MonoBehaviour
             string additionalNum = "0";
 
             viewnum.text = currentNum + additionalNum;
+
+            AudioPlay(clip1, 20f);
         }
-  
+
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
@@ -31,6 +38,8 @@ public class ButtonInput : MonoBehaviour
                 viewnum.text = "Tel: ";
                 viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
+
+                AudioPlay(clip2, 3f);
             }
             else
             {
@@ -39,7 +48,7 @@ public class ButtonInput : MonoBehaviour
                 Start();
             }
         }
-   
+
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
@@ -60,7 +69,7 @@ public class ButtonInput : MonoBehaviour
     public void Clicked1()
     {
         if (viewnum.text.Length < 19)
-        { 
+        {
             string currentNum = viewnum.text;
 
             string additionalNum = "1";
@@ -104,14 +113,14 @@ public class ButtonInput : MonoBehaviour
     public void Clicked2()
     {
         if (viewnum.text.Length < 19)
-        { 
+        {
             string currentNum = viewnum.text;
 
             string additionalNum = "2";
 
             viewnum.text = currentNum + additionalNum;
         }
-    
+
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
@@ -146,14 +155,14 @@ public class ButtonInput : MonoBehaviour
     public void Clicked3()
     {
         if (viewnum.text.Length < 19)
-        { 
+        {
             string currentNum = viewnum.text;
 
             string additionalNum = "3";
-  
+
             viewnum.text = currentNum + additionalNum;
         }
-    
+
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
@@ -168,7 +177,7 @@ public class ButtonInput : MonoBehaviour
                 viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
                 Start();
             }
-        } 
+        }
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
@@ -210,7 +219,7 @@ public class ButtonInput : MonoBehaviour
                 viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
                 Start();
             }
-        }    
+        }
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
@@ -236,7 +245,7 @@ public class ButtonInput : MonoBehaviour
 
             viewnum.text = currentNum + additionalNum;
         }
- 
+
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
@@ -251,7 +260,7 @@ public class ButtonInput : MonoBehaviour
                 viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
                 Start();
             }
-        }   
+        }
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
@@ -279,7 +288,7 @@ public class ButtonInput : MonoBehaviour
 
             viewnum.text = currentNum + additionalNum;
         }
-   
+
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
@@ -294,7 +303,7 @@ public class ButtonInput : MonoBehaviour
                 viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
                 Start();
             }
-        } 
+        }
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
@@ -320,7 +329,7 @@ public class ButtonInput : MonoBehaviour
 
             viewnum.text = currentNum + additionalNum;
         }
-     
+
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
@@ -335,7 +344,7 @@ public class ButtonInput : MonoBehaviour
                 viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
                 Start();
             }
-        }     
+        }
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
@@ -354,14 +363,14 @@ public class ButtonInput : MonoBehaviour
     public void Clicked8()
     {
         if (viewnum.text.Length < 19)
-        {  
+        {
             string currentNum = viewnum.text;
 
             string additionalNum = "8";
 
             viewnum.text = currentNum + additionalNum;
         }
-  
+
         if (viewnum.text.Length == 9)
         {
             if (viewnum.text != "Tel: 0345")
@@ -377,7 +386,7 @@ public class ButtonInput : MonoBehaviour
                 Start();
             }
         }
-   
+
         if (viewnum.text.Length == 14)
         {
             viewnum.text += "-";
@@ -438,7 +447,7 @@ public class ButtonInput : MonoBehaviour
     {
         string CurrentNum = viewnum.text;
 
-        if(CurrentNum.Length == 19)
+        if (CurrentNum.Length == 19)
         {
             if (SoundScriptInstance != null)
             {
@@ -457,7 +466,7 @@ public class ButtonInput : MonoBehaviour
 
     public void Clear()
     {
-        if(UiScriptInstance != null)
+        if (UiScriptInstance != null)
         {
             UiScriptInstance.PlayAllClear();
         }
@@ -466,7 +475,7 @@ public class ButtonInput : MonoBehaviour
     void Start()
     {
         viewmessage.gameObject.SetActive(false);
-        
+
         StartCoroutine(ActivateTMP());
     }
 
@@ -477,5 +486,13 @@ public class ButtonInput : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         viewmessage.gameObject.SetActive(false);
+    }
+
+    public void AudioPlay(AudioClip clip, float second)
+    {
+        if (AudioScriptInstance != null)
+        {
+            AudioScriptInstance.PlayClip(clip, second);
+        }
     }
 }
