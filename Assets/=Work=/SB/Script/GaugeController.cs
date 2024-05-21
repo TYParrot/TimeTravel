@@ -4,13 +4,12 @@ using UnityEngine.UI;
 public class GaugeController : MonoBehaviour
 {
     public Slider slider; 
-    public GameObject lastPopup;
+    private UI_Micro ui;
 
     private bool gaugeFull = false; 
 
     void Start()
     {
-      
         slider.onValueChanged.AddListener(GaugeChanged);
     }
 
@@ -26,9 +25,10 @@ public class GaugeController : MonoBehaviour
             gaugeFull = false;
         }
 
-        if (gaugeFull && !lastPopup.activeSelf)
+        if (gaugeFull)
         {
-            lastPopup.SetActive(true);
+            Managers.Game.ClearMicrowave(true);
+            ui.PlayAllClear();
         }
     }
 }

@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/=Work=/SI/Scene/TelephoneScene.unity
     guid: f9d0a1e621d3cc347855a4bb53cdbe5f
   - enabled: 1
-    path: Assets/=Work=/SB/Scene/MicrowaveScene.unity
-    guid: ec4e0c1675dcd9a45a4a967cf94e4d0e
+    path: Assets/=Work=/SB/Scene/MicroScene_.unity
+    guid: 50f67618f19bfdf4ab5ae0705e3db06a
   - enabled: 1
     path: Assets/=Work=/TY/Scene/Prologue.unity
     guid: 4fa42c899697bf6469eb300d2c79d891
