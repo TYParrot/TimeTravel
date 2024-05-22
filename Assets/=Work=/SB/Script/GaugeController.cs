@@ -6,6 +6,8 @@ public class GaugeController : MonoBehaviour
     public Slider slider; 
     public GameObject lastPopup;
 
+    public UI_Micro ui;
+
     private bool gaugeFull = false; 
 
     void Start()
@@ -26,9 +28,10 @@ public class GaugeController : MonoBehaviour
             gaugeFull = false;
         }
 
-        if (gaugeFull && !lastPopup.activeSelf)
+        if (gaugeFull)
         {
-            lastPopup.SetActive(true);
+            Managers.Game.ClearMicrowave(true);
+            ui.PlayAllClear();
         }
     }
 }

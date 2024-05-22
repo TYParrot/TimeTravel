@@ -12,7 +12,7 @@ public class MicrowaveManager : MonoBehaviour
 
   
    public void ClearGame(){
-    Managers.Game.ClearMicroWave();
+    Managers.Game.ClearMicrowave(true);
     Managers.Game.changeScene(1);
    }
 }
