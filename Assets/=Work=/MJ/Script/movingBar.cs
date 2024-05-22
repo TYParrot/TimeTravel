@@ -36,7 +36,7 @@ public class MovingBarController : MonoBehaviour
     public Transform movingBar; // 이동 바의 위치를 나타내는 Transform
     public Transform[] targetBars; // 타겟 바들의 위치를 나타내는 배열
     public Transform[] StageBalls;  // 스테이지 공들을 나타내는 배열
-    public float speed = 4f;    // 바 이동 속도
+    private float speed = 1f;    // 바 이동 속도
     private Vector3 startMarker; // 시작 지점 마커
     private Vector3 endMarker;   // 끝 지점 마커
     private bool movingToEnd = true; // 바가 이동 방향을 나타내는 플래그
@@ -264,7 +264,7 @@ public class MovingBarController : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Managers.Game의 ClearRadio 함수 호출
-        // Managers.Game.ClearRadio();
+        // Managers.Game.ClearRadio(true);
         // Managers.Game.changeScene(1);
         Debug.Log("ClearRadio 호출");
     }
