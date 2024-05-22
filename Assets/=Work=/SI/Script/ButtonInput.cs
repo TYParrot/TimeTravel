@@ -29,7 +29,7 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
+                viewmessage.text = "첫 시작은 안산의 \n지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
             }
             else
@@ -73,7 +73,7 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
+                viewmessage.text = "첫 시작은 안산의 \n지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
             }
             else
@@ -117,7 +117,7 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
+                viewmessage.text = "첫 시작은 안산의 \n지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
             }
             else
@@ -159,7 +159,7 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
+                viewmessage.text = "첫 시작은 안산의 \n지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
             }
             else
@@ -201,7 +201,7 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
+                viewmessage.text = "첫 시작은 안산의 \n지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
             }
             else
@@ -242,7 +242,7 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
+                viewmessage.text = "첫 시작은 안산의 \n지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
             }
             else
@@ -285,7 +285,7 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
+                viewmessage.text = "첫 시작은 안산의 \n지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
             }
             else
@@ -326,7 +326,7 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
+                viewmessage.text = "첫 시작은 안산의 \n지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
             }
             else
@@ -367,7 +367,7 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
+                viewmessage.text = "첫 시작은 안산의 \n지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
             }
             else
@@ -409,7 +409,7 @@ public class ButtonInput : MonoBehaviour
             if (viewnum.text != "Tel: 0345")
             {
                 viewnum.text = "Tel: ";
-                viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
+                viewmessage.text = "첫 시작은 안산의 \n지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
             }
             else

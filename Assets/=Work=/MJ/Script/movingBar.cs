@@ -36,7 +36,7 @@ public class MovingBarController : MonoBehaviour
     public Transform movingBar; // 이동 바의 위치를 나타내는 Transform
     public Transform[] targetBars; // 타겟 바들의 위치를 나타내는 배열
     public Transform[] StageBalls;  // 스테이지 공들을 나타내는 배열
-    public float speed = 4f;    // 바 이동 속도
+    private float speed = 1f;    // 바 이동 속도
     private Vector3 startMarker; // 시작 지점 마커
     private Vector3 endMarker;   // 끝 지점 마커
     private bool movingToEnd = true; // 바가 이동 방향을 나타내는 플래그
@@ -48,6 +48,7 @@ public class MovingBarController : MonoBehaviour
     private GameObject failObject;        // 실패 오브젝트
     private GameObject colorObject;       // 색상 오브젝트
     public Color originalRadioColor;      // 라디오의 원래 색상
+    public bool pausedBtn = false;      //k 인풋 대용 버튼
 
     // music_scene 관련 변수
     private GameObject musicSceneObject; // 음악 씬 오브젝트를 참조하기 위한 변수
@@ -158,9 +159,19 @@ public class MovingBarController : MonoBehaviour
         }
     }
 
+    public void clickBtn(){
+        pausedBtn =true;
+    }
+
     private bool IsMovementPaused()
     {
-        return Input.GetKey(KeyCode.K); // K 키가 눌렸는지 반환
+        if(pausedBtn)StartCoroutine(pauseBtn());
+        return pausedBtn; 
+    }
+
+    public IEnumerator pauseBtn(){
+        yield return null;
+        pausedBtn = false;
     }
 
     private System.Collections.IEnumerator PauseMovement(float pauseTime)
@@ -253,7 +264,7 @@ public class MovingBarController : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Managers.Game의 ClearRadio 함수 호출
-        // Managers.Game.ClearRadio();
+        // Managers.Game.ClearRadio(true);
         // Managers.Game.changeScene(1);
         Debug.Log("ClearRadio 호출");
     }
