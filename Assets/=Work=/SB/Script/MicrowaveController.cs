@@ -24,8 +24,8 @@ public class MicrowaveController : MonoBehaviour
         slider.value += 0.1f;
     }
     public void SetIntensity(){
-        pointLight.intensity=3000;
-        pointLight.range=100;
+        pointLight.intensity=80;
+        pointLight.range=50;
         PlaySoundForDuration(1.0f);
         Invoke("ResetIntensity", 1.0f);
     }
