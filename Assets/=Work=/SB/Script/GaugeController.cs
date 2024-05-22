@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class GaugeController : MonoBehaviour
 {
     public Slider slider; 
-    public GameObject lastPopup;
 
     public UI_Micro ui;
 
@@ -30,8 +29,9 @@ public class GaugeController : MonoBehaviour
 
         if (gaugeFull)
         {
-            Managers.Game.ClearMicrowave(true);
+            Debug.Log("full");
             ui.PlayAllClear();
+            Managers.Game.ClearMicrowave(true);
         }
     }
 }
