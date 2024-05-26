@@ -6,12 +6,19 @@ public class Spin : MonoBehaviour
 {
     public Transform Pannel;
 
+    public AudioChange AudioScriptInstance;
+
+    public AudioClip clip1;
+    public AudioClip clip2;
+
     private bool IsSpinning = false; // ȸ�� ������ üũ�ϴ� ����
 
     public void Click_To_Spin0()
     {
         if (!IsSpinning)
         {
+            PhonePlay(clip1, 10f);
+
             StartCoroutine(SpinCoroutine0());
         }
     }
@@ -36,12 +43,16 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
+
+        PhonePlay(clip2, 0.8f);
+
         // ȸ�� �� ���
         yield return new WaitForSeconds(0.2f);
 
         //ȸ�� �� ����
         while (CurrentAngle > StartAngle)
         {
+
             CurrentAngle -= SpinSpeed * Time.deltaTime;
 
             if (CurrentAngle <= StartAngle)
@@ -61,6 +72,8 @@ public class Spin : MonoBehaviour
     {
         if (!IsSpinning)
         {
+            PhonePlay(clip1, 10f);
+
             StartCoroutine(SpinCoroutine1());
         }
     }
@@ -84,6 +97,8 @@ public class Spin : MonoBehaviour
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
+
+        PhonePlay(clip2, 0.4f);
 
         // ȸ�� �� ���
         yield return new WaitForSeconds(0.2f);
@@ -110,6 +125,8 @@ public class Spin : MonoBehaviour
     {
         if (!IsSpinning)
         {
+            PhonePlay(clip1, 10f);
+
             StartCoroutine(SpinCoroutine2());
         }
     }
@@ -133,6 +150,8 @@ public class Spin : MonoBehaviour
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
+
+        PhonePlay(clip2, 0.4f);
 
         // ȸ�� �� ���
         yield return new WaitForSeconds(0.2f);
@@ -159,6 +178,8 @@ public class Spin : MonoBehaviour
     {
         if (!IsSpinning)
         {
+            PhonePlay(clip1, 10f);
+
             StartCoroutine(SpinCoroutine3());
         }
     }
@@ -182,6 +203,8 @@ public class Spin : MonoBehaviour
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
+
+        PhonePlay(clip2, 0.5f);
 
         // ȸ�� �� ���
         yield return new WaitForSeconds(0.2f);
@@ -208,6 +231,8 @@ public class Spin : MonoBehaviour
     {
         if (!IsSpinning)
         {
+            PhonePlay(clip1, 10f);
+
             StartCoroutine(SpinCoroutine4());
         }
     }
@@ -231,6 +256,8 @@ public class Spin : MonoBehaviour
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
+
+        PhonePlay(clip2, 0.5f);
 
         // ȸ�� �� ���
         yield return new WaitForSeconds(0.2f);
@@ -257,6 +284,8 @@ public class Spin : MonoBehaviour
     {
         if (!IsSpinning)
         {
+            PhonePlay(clip1, 10f);
+
             StartCoroutine(SpinCoroutine5());
         }
     }
@@ -280,6 +309,8 @@ public class Spin : MonoBehaviour
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
+
+        PhonePlay(clip2, 0.6f);
 
         // ȸ�� �� ���
         yield return new WaitForSeconds(0.2f);
@@ -305,6 +336,8 @@ public class Spin : MonoBehaviour
     {
         if (!IsSpinning)
         {
+            PhonePlay(clip1, 10f);
+
             StartCoroutine(SpinCoroutine6());
         }
     }
@@ -328,6 +361,8 @@ public class Spin : MonoBehaviour
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
+
+        PhonePlay(clip2, 0.6f);
 
         // ȸ�� �� ���
         yield return new WaitForSeconds(0.2f);
@@ -353,6 +388,8 @@ public class Spin : MonoBehaviour
     {
         if (!IsSpinning)
         {
+            PhonePlay(clip1, 10f);
+
             StartCoroutine(SpinCoroutine7());
         }
     }
@@ -376,6 +413,8 @@ public class Spin : MonoBehaviour
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
+
+        PhonePlay(clip2, 0.7f);
 
         // ȸ�� �� ���
         yield return new WaitForSeconds(0.2f);
@@ -401,6 +440,8 @@ public class Spin : MonoBehaviour
     {
         if (!IsSpinning)
         {
+            PhonePlay(clip1, 10f);
+
             StartCoroutine(SpinCoroutine8());
         }
     }
@@ -424,6 +465,8 @@ public class Spin : MonoBehaviour
             Pannel.localRotation = Quaternion.Euler(0, 0, CurrentAngle);
             yield return null;
         }
+
+        PhonePlay(clip2, 0.7f);
 
         // ȸ�� �� ���
         yield return new WaitForSeconds(0.2f);
@@ -449,6 +492,8 @@ public class Spin : MonoBehaviour
     {
         if (!IsSpinning)
         {
+            PhonePlay(clip1, 10f);
+
             StartCoroutine(SpinCoroutine9());
         }
     }
@@ -473,6 +518,8 @@ public class Spin : MonoBehaviour
             yield return null;
         }
 
+        PhonePlay(clip2, 0.8f);
+
         // ȸ�� �� ���
         yield return new WaitForSeconds(0.2f);
 
@@ -492,4 +539,14 @@ public class Spin : MonoBehaviour
 
         IsSpinning = false;
     }
+
+    public void PhonePlay(AudioClip clip, float second)
+    {
+        if (AudioScriptInstance != null)
+        {
+            AudioScriptInstance.PlayClip(clip, second);
+        }
+    }
+
 }
+
