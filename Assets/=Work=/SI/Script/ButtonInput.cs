@@ -15,20 +15,20 @@ public class ButtonInput : MonoBehaviour
 
     public AudioChange AudioScriptInstance;
 
-    public AudioClip clip1;
-    public AudioClip clip2;
+    public AudioClip clip;
 
     public void Clicked0()
     {
         if (viewnum.text.Length < 19)
         {
+            
+
             string currentNum = viewnum.text;
 
             string additionalNum = "0";
 
             viewnum.text = currentNum + additionalNum;
 
-            AudioPlay(clip1, 20f);
         }
 
         if (viewnum.text.Length == 9)
@@ -39,7 +39,7 @@ public class ButtonInput : MonoBehaviour
                 viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
 
-                AudioPlay(clip2, 3f);
+                AudioPlay(clip, 1f);
             }
             else
             {
@@ -75,6 +75,8 @@ public class ButtonInput : MonoBehaviour
             string additionalNum = "1";
 
             viewnum.text = currentNum + additionalNum;
+
+            
         }
 
         if (viewnum.text.Length == 9)
@@ -84,6 +86,8 @@ public class ButtonInput : MonoBehaviour
                 viewnum.text = "Tel: ";
                 viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
+
+                AudioPlay(clip, 1f);
             }
             else
             {
@@ -119,6 +123,8 @@ public class ButtonInput : MonoBehaviour
             string additionalNum = "2";
 
             viewnum.text = currentNum + additionalNum;
+
+            
         }
 
         if (viewnum.text.Length == 9)
@@ -128,6 +134,8 @@ public class ButtonInput : MonoBehaviour
                 viewnum.text = "Tel: ";
                 viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
+
+                AudioPlay(clip, 1f);
             }
             else
             {
@@ -161,6 +169,8 @@ public class ButtonInput : MonoBehaviour
             string additionalNum = "3";
 
             viewnum.text = currentNum + additionalNum;
+
+            
         }
 
         if (viewnum.text.Length == 9)
@@ -170,6 +180,8 @@ public class ButtonInput : MonoBehaviour
                 viewnum.text = "Tel: ";
                 viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
+
+                AudioPlay(clip, 1f);
             }
             else
             {
@@ -203,6 +215,8 @@ public class ButtonInput : MonoBehaviour
             string additionalNum = "4";
 
             viewnum.text = currentNum + additionalNum;
+
+            
         }
 
         if (viewnum.text.Length == 9)
@@ -212,6 +226,8 @@ public class ButtonInput : MonoBehaviour
                 viewnum.text = "Tel: ";
                 viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
+
+                AudioPlay(clip, 1f);
             }
             else
             {
@@ -244,6 +260,8 @@ public class ButtonInput : MonoBehaviour
             string additionalNum = "5";
 
             viewnum.text = currentNum + additionalNum;
+
+            
         }
 
         if (viewnum.text.Length == 9)
@@ -253,6 +271,8 @@ public class ButtonInput : MonoBehaviour
                 viewnum.text = "Tel: ";
                 viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
+
+                AudioPlay(clip, 1f);
             }
             else
             {
@@ -287,6 +307,8 @@ public class ButtonInput : MonoBehaviour
             string additionalNum = "6";
 
             viewnum.text = currentNum + additionalNum;
+
+            
         }
 
         if (viewnum.text.Length == 9)
@@ -296,6 +318,8 @@ public class ButtonInput : MonoBehaviour
                 viewnum.text = "Tel: ";
                 viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
+
+                AudioPlay(clip, 1f);
             }
             else
             {
@@ -328,6 +352,8 @@ public class ButtonInput : MonoBehaviour
             string additionalNum = "7";
 
             viewnum.text = currentNum + additionalNum;
+
+            
         }
 
         if (viewnum.text.Length == 9)
@@ -337,6 +363,8 @@ public class ButtonInput : MonoBehaviour
                 viewnum.text = "Tel: ";
                 viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
+
+                AudioPlay(clip, 1f);
             }
             else
             {
@@ -369,6 +397,8 @@ public class ButtonInput : MonoBehaviour
             string additionalNum = "8";
 
             viewnum.text = currentNum + additionalNum;
+
+            
         }
 
         if (viewnum.text.Length == 9)
@@ -378,6 +408,8 @@ public class ButtonInput : MonoBehaviour
                 viewnum.text = "Tel: ";
                 viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
+
+                AudioPlay(clip, 1f);
             }
             else
             {
@@ -411,6 +443,8 @@ public class ButtonInput : MonoBehaviour
             string additionalNum = "9";
 
             viewnum.text = currentNum + additionalNum;
+
+            
         }
 
         if (viewnum.text.Length == 9)
@@ -420,6 +454,8 @@ public class ButtonInput : MonoBehaviour
                 viewnum.text = "Tel: ";
                 viewmessage.text = "첫 시작은 안산의 지역번호로 시작해야해\n 안산의 지역번호는 '0345'야";
                 Start();
+
+                AudioPlay(clip, 1f);
             }
             else
             {
