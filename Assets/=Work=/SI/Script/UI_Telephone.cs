@@ -17,6 +17,11 @@ public class UI_Telephone : MonoBehaviour
     private GameObject[] Msgs; 
     private bool isItStart = false;
 
+    //인트로 재생시 버튼 패널 입력 막기 위해 두개 준비함.
+    public GameObject Telephone_Btn;
+    public GameObject Telephone_NoBtn;
+    public GameObject Mascoat;
+
     void Start()
     {
         PlayIntro();
@@ -37,6 +42,10 @@ public class UI_Telephone : MonoBehaviour
     }
     
     public void PlayAllClear(){
+        
+        Telephone_Btn.SetActive(false);
+        Telephone_NoBtn.SetActive(true);
+        Mascoat.SetActive(false);
 
         AllClearPanel.SetActive(true);
 
@@ -67,6 +76,9 @@ public class UI_Telephone : MonoBehaviour
             isItStart = true;
             ExplainPanel.SetActive(true);
             yield return new WaitForSeconds(5.0f);
+            Telephone_Btn.SetActive(true);
+            Telephone_NoBtn.SetActive(false);
+            Mascoat.SetActive(true);
 
         }
 

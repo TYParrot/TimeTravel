@@ -17,6 +17,8 @@ public class UI_Micro : MonoBehaviour
     private GameObject[] Msgs; 
     private bool isItStart = false;
 
+    private bool introPlaying = true;
+
     void Start()
     {
         PlayIntro();
@@ -62,12 +64,14 @@ public class UI_Micro : MonoBehaviour
         }
 
         DeactivateAll();
-        
+
         if(!isItStart){
             isItStart = true;
             ExplainPanel.SetActive(true);
             yield return new WaitForSeconds(5.0f);
-
+                if(introPlaying){
+                introPlaying = false;
+            }
         }
 
         DeactivateAll();
@@ -82,5 +86,9 @@ public class UI_Micro : MonoBehaviour
         IntroPanel.SetActive(false);
         AllClearPanel.SetActive(false);
         ExplainPanel.SetActive(false);
+    }
+
+    public bool returnIntroPlaying(){
+        return introPlaying;
     }
 }

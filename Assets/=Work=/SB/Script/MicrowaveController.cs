@@ -21,7 +21,7 @@ public class MicrowaveController : MonoBehaviour
     }
 
     public void FillGauge(){
-        slider.value += 0.1f;
+        slider.value += 0.05f;
     }
     public void SetIntensity(){
         pointLight.intensity=80;
