@@ -13,4 +13,10 @@ public class TelephoneSetting : MonoBehaviour
             TextCanvas.SetActive(false);
         }
     }
+
+    public void GoToTelephone(){
+        if(!Managers.Game.ReturnTelephone()){
+            Managers.Game.changeScene(3);
+        }
+    }
 }

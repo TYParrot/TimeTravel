@@ -15,4 +15,10 @@ public class MicrowaveSetting : MonoBehaviour
         }
     }
 
+    public void GoToMicrowave(){
+        if(!Managers.Game.ReturnMicrowave()){
+            Managers.Game.changeScene(4);
+        }
+    }
+
 }

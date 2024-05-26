@@ -35,7 +35,7 @@ public class ButtonInput : MonoBehaviour
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
+                viewmessage.text = "이제 아무 번호를\n입력해봐!\n안산산업역사 \n박물관으로\n연결될거야!";
                 Start();
             }
         }
@@ -79,7 +79,7 @@ public class ButtonInput : MonoBehaviour
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
+                viewmessage.text = "이제 아무 번호를\n입력해봐!\n안산산업역사 \n박물관으로\n연결될거야!";
                 Start();
             }
         }
@@ -123,7 +123,7 @@ public class ButtonInput : MonoBehaviour
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
+                viewmessage.text = "이제 아무 번호를\n입력해봐!\n안산산업역사 \n박물관으로\n연결될거야!";
                 Start();
             }
         }
@@ -165,7 +165,7 @@ public class ButtonInput : MonoBehaviour
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
+                viewmessage.text = "이제 아무 번호를\n입력해봐!\n안산산업역사 \n박물관으로\n연결될거야!";
                 Start();
             }
         } 
@@ -207,7 +207,7 @@ public class ButtonInput : MonoBehaviour
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
+                viewmessage.text = "이제 아무 번호를\n입력해봐!\n안산산업역사 \n박물관으로\n연결될거야!";
                 Start();
             }
         }    
@@ -248,7 +248,7 @@ public class ButtonInput : MonoBehaviour
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
+                viewmessage.text = "이제 아무 번호를\n입력해봐!\n안산산업역사 \n박물관으로\n연결될거야!";
                 Start();
             }
         }   
@@ -291,7 +291,7 @@ public class ButtonInput : MonoBehaviour
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
+                viewmessage.text = "이제 아무 번호를\n입력해봐!\n안산산업역사 \n박물관으로\n연결될거야!";
                 Start();
             }
         } 
@@ -332,7 +332,7 @@ public class ButtonInput : MonoBehaviour
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
+                viewmessage.text = "이제 아무 번호를\n입력해봐!\n안산산업역사 \n박물관으로\n연결될거야!";
                 Start();
             }
         }     
@@ -373,7 +373,7 @@ public class ButtonInput : MonoBehaviour
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
+                viewmessage.text = "이제 아무 번호를\n입력해봐!\n안산산업역사 \n박물관으로\n연결될거야!";
                 Start();
             }
         }
@@ -415,7 +415,7 @@ public class ButtonInput : MonoBehaviour
             else
             {
                 viewnum.text += "-";
-                viewmessage.text = "이제 원하는 번호로 전화를 걸어봐!";
+                viewmessage.text = "이제 아무 번호를\n입력해봐!\n안산산업역사 \n박물관으로\n연결될거야!";
                 Start();
             }
         }

@@ -29,9 +29,12 @@ public class GaugeController : MonoBehaviour
 
         if (gaugeFull)
         {
-            Debug.Log("full");
             ui.PlayAllClear();
             Managers.Game.ClearMicrowave(true);
         }
+    }
+
+    public bool returnGaugeFull(){
+        return gaugeFull;
     }
 }
