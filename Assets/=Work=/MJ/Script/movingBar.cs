@@ -159,6 +159,7 @@ public class MovingBarController : MonoBehaviour
         }
     }
 
+    //컨트롤러 충돌시 호출할 함수
     public void clickBtn(){
         pausedBtn =true;
     }

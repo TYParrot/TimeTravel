@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.55228984, g: 0.5044941, b: 0.37796882, a: 1}
+  m_IndirectSpecularColor: {r: 0.55224496, g: 0.5045177, b: 0.37643015, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -37175,6 +37175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextCanvas: {fileID: 289871890}
+  RController: {fileID: 1009914506}
+  LController: {fileID: 1958766919}
 --- !u!114 &7170954522635194243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39688,6 +39690,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextCanvas: {fileID: 1479628374}
+  RController: {fileID: 1009914506}
+  LController: {fileID: 1958766919}
 --- !u!114 &8187812748498894160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40943,6 +40947,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextCanvas: {fileID: 1675407565}
+  RController: {fileID: 1009914506}
+  LController: {fileID: 1958766919}
 --- !u!114 &8874943734211368998
 MonoBehaviour:
   m_ObjectHideFlags: 0
