@@ -7,7 +7,7 @@ public class ButtonInput : MonoBehaviour
 {
     public TextMeshProUGUI viewnum, viewmessage;
 
-    public PlayQuickSound SoundScriptInstance;
+    public AudioChange SoundScriptInstance;
 
     public TelephoneManager ManageScriptInstance;
 
@@ -15,7 +15,7 @@ public class ButtonInput : MonoBehaviour
 
     public AudioChange AudioScriptInstance;
 
-    public AudioClip clip;
+    public AudioClip clip, clip_clear;
 
     public void Clicked0()
     {
@@ -58,7 +58,7 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
-            SoundPlay();
+            SoundPlay(clip_clear, 50f);
 
             Clear();
 
@@ -106,7 +106,7 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
-            SoundPlay();
+            SoundPlay(clip_clear, 50f);
 
             Clear();
 
@@ -153,7 +153,7 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
-            SoundPlay();
+            SoundPlay(clip_clear, 50f);
 
             Clear();
 
@@ -199,7 +199,7 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
-            SoundPlay();
+            SoundPlay(clip_clear, 50f);
 
             Clear();
 
@@ -245,7 +245,7 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
-            SoundPlay();
+            SoundPlay(clip_clear, 50f);
 
             Clear();
 
@@ -290,7 +290,7 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
-            SoundPlay();
+            SoundPlay(clip_clear, 50f);
 
             Clear();
 
@@ -337,7 +337,7 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
-            SoundPlay();
+            SoundPlay(clip_clear, 50f);
 
             Clear();
 
@@ -382,7 +382,7 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
-            SoundPlay();
+            SoundPlay(clip_clear, 50f);
 
             Clear();
 
@@ -428,7 +428,7 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
-            SoundPlay();
+            SoundPlay(clip_clear, 50f);
 
             Clear();
 
@@ -473,13 +473,13 @@ public class ButtonInput : MonoBehaviour
 
         if (viewnum.text.Length == 19)
         {
-            SoundPlay();
+            SoundPlay(clip_clear, 50f);
 
             Clear();
 
         }
     }
-    public void SoundPlay()
+    public void SoundPlay(AudioClip clip, float second)
     {
         string CurrentNum = viewnum.text;
 
@@ -487,7 +487,7 @@ public class ButtonInput : MonoBehaviour
         {
             if (SoundScriptInstance != null)
             {
-                SoundScriptInstance.Play();
+                SoundScriptInstance.PlayClip(clip, second);
             }
         }
     }
