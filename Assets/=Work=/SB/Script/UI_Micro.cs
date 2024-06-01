@@ -12,6 +12,8 @@ public class UI_Micro : MonoBehaviour
     //모두 클리어시 Start씬으로 돌아가는 버튼
     public GameObject GoHomeBtn;
 
+    public GameObject particle;
+
 
     //자식 메세지들 저장용도
     private GameObject[] Msgs; 
@@ -41,6 +43,7 @@ public class UI_Micro : MonoBehaviour
     public void PlayAllClear(){
 
         AllClearPanel.SetActive(true);
+        StartCoroutine(playParticle());
 
         Msgs = new GameObject[AllClearPanel.transform.childCount];
         for (int i = 0; i < AllClearPanel.transform.childCount; i++)
@@ -90,5 +93,11 @@ public class UI_Micro : MonoBehaviour
 
     public bool returnIntroPlaying(){
         return introPlaying;
+    }
+
+    IEnumerator playParticle(){
+        particle.SetActive(true);
+        yield return new WaitForSeconds(5.0f);
+        particle.SetActive(false);
     }
 }

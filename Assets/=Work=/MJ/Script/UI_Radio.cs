@@ -25,6 +25,9 @@ public class UI_Radio : MonoBehaviour
     private int stage;
     private bool playAllClear = false;
 
+    
+    public GameObject particle;
+
     void Start()
     {   
         PlayIntro();
@@ -52,6 +55,8 @@ public class UI_Radio : MonoBehaviour
         Mascot.SetActive(false);
         RHammer.SetActive(false);
         LHammer.SetActive(false);
+
+        StartCoroutine(playParticle());
         
         AllClearPanel.SetActive(true);
         playAllClear = true;
@@ -104,5 +109,11 @@ public class UI_Radio : MonoBehaviour
         IntroPanel.SetActive(false);
         ExplainPanel.SetActive(false);
 
+    }
+    
+    IEnumerator playParticle(){
+        particle.SetActive(true);
+        yield return new WaitForSeconds(5.0f);
+        particle.SetActive(false);
     }
 }

@@ -14,6 +14,7 @@ public class UI_Scenario : MonoBehaviour
     //모두 클리어시 Start씬으로 돌아가는 버튼
     public GameObject GoHomeBtn;
 
+    public GameObject particle;
 
     //자식 메세지들 저장용도
     private GameObject[] Msgs; 
@@ -97,6 +98,8 @@ public class UI_Scenario : MonoBehaviour
     
     void PlayAllClear(){
 
+        particle.SetActive(true);
+        
         if(Managers.Game.ReturnMicrowave() && Managers.Game.ReturnRadio() && Managers.Game.ReturnTelephone() && Managers.Scenario.ReturnPlayAllClear() == false){
 
             AllClearPanel.SetActive(true);
@@ -143,5 +146,11 @@ public class UI_Scenario : MonoBehaviour
         MicrowavePanel.SetActive(false);
         TelephonePanel.SetActive(false);
         AllClearPanel.SetActive(false);
+    }
+
+    IEnumerator playParticle(){
+        particle.SetActive(true);
+        yield return new WaitForSeconds(5.0f);
+        particle.SetActive(false);
     }
 }

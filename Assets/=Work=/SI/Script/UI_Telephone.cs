@@ -12,6 +12,7 @@ public class UI_Telephone : MonoBehaviour
     //모두 클리어시 Start씬으로 돌아가는 버튼
     public GameObject GoHomeBtn;
 
+    public GameObject particle;
 
     //자식 메세지들 저장용도
     private GameObject[] Msgs; 
@@ -46,6 +47,8 @@ public class UI_Telephone : MonoBehaviour
         Telephone_Btn.SetActive(false);
         Telephone_NoBtn.SetActive(true);
         Mascoat.SetActive(false);
+
+        StartCoroutine(playParticle());
 
         AllClearPanel.SetActive(true);
 
@@ -95,4 +98,11 @@ public class UI_Telephone : MonoBehaviour
         AllClearPanel.SetActive(false);
         ExplainPanel.SetActive(false);
     }
+
+    IEnumerator playParticle(){
+        particle.SetActive(true);
+        yield return new WaitForSeconds(5.0f);
+        particle.SetActive(false);
+    }
+
 }
