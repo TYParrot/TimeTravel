@@ -16,6 +16,8 @@ public class UI_Scenario : MonoBehaviour
 
     public GameObject particle;
 
+    public Material AllClearSkyBox;
+
     //자식 메세지들 저장용도
     private GameObject[] Msgs; 
 
@@ -97,12 +99,12 @@ public class UI_Scenario : MonoBehaviour
     }
     
     void PlayAllClear(){
-
-        particle.SetActive(true);
         
         if(Managers.Game.ReturnMicrowave() && Managers.Game.ReturnRadio() && Managers.Game.ReturnTelephone() && Managers.Scenario.ReturnPlayAllClear() == false){
 
             AllClearPanel.SetActive(true);
+            particle.SetActive(true);
+            RenderSettings.skybox = AllClearSkyBox;
 
             Msgs = new GameObject[AllClearPanel.transform.childCount];
             for (int i = 0; i < AllClearPanel.transform.childCount; i++)

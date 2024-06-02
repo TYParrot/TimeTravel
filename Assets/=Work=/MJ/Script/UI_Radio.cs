@@ -15,9 +15,7 @@ public class UI_Radio : MonoBehaviour
     //게임 플레이시 마스코트, 뿅망치 활성화 필요
     public GameObject Mascot;
     public GameObject RightHand;
-    private GameObject RHammer;
     public GameObject LeftHand;
-    private GameObject LHammer;
 
     //자식 메세지들 저장용도
     private GameObject[] Msgs; 
@@ -31,8 +29,6 @@ public class UI_Radio : MonoBehaviour
     void Start()
     {   
         PlayIntro();
-        RHammer = RightHand.transform.Find("Hammer").gameObject;
-        LHammer = LeftHand.transform.Find("Hammer").gameObject;
     }
 
     void PlayIntro(){
@@ -53,8 +49,8 @@ public class UI_Radio : MonoBehaviour
     public void PlayAllClear(){
 
         Mascot.SetActive(false);
-        RHammer.SetActive(false);
-        LHammer.SetActive(false);
+        RightHand.SetActive(false);
+        LeftHand.SetActive(false);
 
         StartCoroutine(playParticle());
         
