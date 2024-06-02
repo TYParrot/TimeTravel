@@ -17,6 +17,9 @@ public class ControllerMoving : MonoBehaviour
     public UI_Micro UI;
     public GameObject mascoat;
 
+    
+    public XRBaseController Controller;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +56,8 @@ public class ControllerMoving : MonoBehaviour
         if(timer >= checkInterval){
             distance = Vector3.Distance(transform.position, previousPosition);
             
-            if(distance >= 0.1){
+            if(distance >= 0.08){
+                Controller.SendHapticImpulse(0.5f, 0.3f);
                 controllerScript.FillGauge();
                 controllerScript.SetIntensity();
             }

@@ -14,6 +14,9 @@ public class UI_Scenario : MonoBehaviour
     //모두 클리어시 Start씬으로 돌아가는 버튼
     public GameObject GoHomeBtn;
 
+    public GameObject particle;
+
+    public Material AllClearSkyBox;
 
     //자식 메세지들 저장용도
     private GameObject[] Msgs; 
@@ -96,10 +99,12 @@ public class UI_Scenario : MonoBehaviour
     }
     
     void PlayAllClear(){
-
+        
         if(Managers.Game.ReturnMicrowave() && Managers.Game.ReturnRadio() && Managers.Game.ReturnTelephone() && Managers.Scenario.ReturnPlayAllClear() == false){
 
             AllClearPanel.SetActive(true);
+            particle.SetActive(true);
+            RenderSettings.skybox = AllClearSkyBox;
 
             Msgs = new GameObject[AllClearPanel.transform.childCount];
             for (int i = 0; i < AllClearPanel.transform.childCount; i++)
@@ -143,5 +148,11 @@ public class UI_Scenario : MonoBehaviour
         MicrowavePanel.SetActive(false);
         TelephonePanel.SetActive(false);
         AllClearPanel.SetActive(false);
+    }
+
+    IEnumerator playParticle(){
+        particle.SetActive(true);
+        yield return new WaitForSeconds(5.0f);
+        particle.SetActive(false);
     }
 }

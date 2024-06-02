@@ -11,13 +11,20 @@ public class UI_Radio : MonoBehaviour
 
     //모두 클리어시 Start씬으로 돌아가는 버튼
     public GameObject GoHomeBtn;
-
+    
+    //게임 플레이시 마스코트, 뿅망치 활성화 필요
+    public GameObject Mascot;
+    public GameObject RightHand;
+    public GameObject LeftHand;
 
     //자식 메세지들 저장용도
     private GameObject[] Msgs; 
     private bool isItStart = false;
     private int stage;
     private bool playAllClear = false;
+
+    
+    public GameObject particle;
 
     void Start()
     {   
@@ -41,6 +48,12 @@ public class UI_Radio : MonoBehaviour
 
     public void PlayAllClear(){
 
+        Mascot.SetActive(false);
+        RightHand.SetActive(false);
+        LeftHand.SetActive(false);
+
+        StartCoroutine(playParticle());
+        
         AllClearPanel.SetActive(true);
         playAllClear = true;
 
@@ -74,6 +87,9 @@ public class UI_Radio : MonoBehaviour
             isItStart = true;
             ExplainPanel.SetActive(true);
             yield return new WaitForSeconds(5.0f);
+            Mascot.SetActive(true);
+            RightHand.SetActive(true);
+            LeftHand.SetActive(true);
 
         }
 
@@ -89,5 +105,11 @@ public class UI_Radio : MonoBehaviour
         IntroPanel.SetActive(false);
         ExplainPanel.SetActive(false);
 
+    }
+    
+    IEnumerator playParticle(){
+        particle.SetActive(true);
+        yield return new WaitForSeconds(5.0f);
+        particle.SetActive(false);
     }
 }

@@ -7,6 +7,8 @@ TagManager:
   - Trail
   - Canvas
   - SamplesInfoPanel
+  - Radio
+  - RadioHand
   layers:
   - Default
   - TransparentFX
