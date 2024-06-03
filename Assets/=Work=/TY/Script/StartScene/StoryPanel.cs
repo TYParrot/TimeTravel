@@ -5,24 +5,26 @@ using UnityEngine;
 public class StoryPanel : MonoBehaviour
 {
     private GameObject[] imgs;
-    // Start is called before the first frame update
-    void Start()
-    {
-        imgs = new GameObject[gameObject.transform.childCount];
-        for(int i = 0; i<gameObject.transform.childCount; i++){
-            imgs[i] = gameObject.transform.GetChild(i).gameObject;
-        }
-
-        StartCoroutine(StoryImg());
-    }
+    public GameObject mascot;
 
     IEnumerator StoryImg(){
 
         foreach (GameObject img in imgs){
             img.SetActive(true);
 
-            yield return new WaitForSeconds(4.0f);
+            yield return new WaitForSeconds(5.0f);
             img.SetActive(false);
         }
+        gameObject.SetActive(false);
+        mascot.SetActive(true);
+    }
+
+    public void Setting(){
+        imgs = new GameObject[gameObject.transform.childCount];
+        for(int i = 0; i<gameObject.transform.childCount; i++){
+            imgs[i] = gameObject.transform.GetChild(i).gameObject;
+        }
+        mascot.SetActive(false);
+        StartCoroutine(StoryImg());
     }
 }
