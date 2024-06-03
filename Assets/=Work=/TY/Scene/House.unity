@@ -15834,12 +15834,12 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 0
+  - 0.3
   m_Url: 
   m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 01
+  m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 1
   m_WaitForFirstFrame: 1
@@ -19211,7 +19211,7 @@ Transform:
   m_GameObject: {fileID: 1670455134}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.32, y: 2, z: 14.68}
+  m_LocalPosition: {x: 3.07, y: 2, z: -6.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21002,7 +21002,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uBA48\uCD98 \uBB3C\uAC74\uB4E4\uC744 \uB2E4\uC2DC \uC6C0\uC9C1\uC774\uACE0\uC790
     \uD558\uB294 \n\uB108\uC758 \uB178\uB825\uC744 \uD1B5\uD574\n\uC0AC\uB78C\uB4E4\uC774
-    \uACFC\uAC70\uB97C \uAE30\uC5B5\uD558\uACE0 \uCD94\uC5B5\uB3C4\uB85D \uD558\uB294
+    \uACFC\uAC70\uB97C \uAE30\uC5B5\uD558\uACE0 \uCD94\uC5B5\uD558\uB3C4\uB85D \uD558\uB294
     \n\uB73B\uAE4A\uC740 \uC2DC\uAC04\uC744 \uB9CC\uB4E4\uC5B4 \uB0B4\uC5C8\uC5B4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87213fd289f6ab242b9d9b8f40452b17, type: 2}
@@ -23338,7 +23338,7 @@ Transform:
   m_GameObject: {fileID: 2021189751}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.56, y: 2.03, z: 14.06}
+  m_LocalPosition: {x: 3.07, y: 2, z: -6.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
