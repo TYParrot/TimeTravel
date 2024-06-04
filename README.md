@@ -47,5 +47,35 @@
 
 게임 내 화면은 크게 프롤로그, 스토리, 하우스씬, 미니게임으로 구성됩니다.<br/>
 
+#### 프롤로그
+![프롤로그](https://github.com/TYParrot/TimeTravel/assets/89141681/d30bf2b9-2d6e-42b7-a7a5-73ba9acfc0b4)
+
+#### 스토리
+![스토리](https://github.com/TYParrot/TimeTravel/assets/89141681/613e622e-7e92-427d-8b14-873778824f5e)
+
+이렇게 게임을 시작하게 되면 하우스씬으로 들어가게 됩니다. 플레이어는 하우스 내부를 돌아다니며 상호작용 가능한 가전제품을 찾을 수 있습니다.<br/>
+
+#### 하우스-라디오
+![하우스-라디오](https://github.com/TYParrot/TimeTravel/assets/89141681/16f05b0a-04db-4f2c-8926-7f5bfbe2c382)
+
+#### 하우스-전화기
+![하우스-전화기](https://github.com/TYParrot/TimeTravel/assets/89141681/399a72a3-112c-43b2-9953-50e452fa92c3)
+
+#### 하우스-전자레인지
+![하우스-전자레인지](https://github.com/TYParrot/TimeTravel/assets/89141681/51863e71-1845-40bb-a4a7-460711c1d3b3)
+
+각 가전제품을 컨트롤러로 클릭하게 되면 해당하는 미니게임이 진행됩니다.
+
+#### 라디오 게임
+![라디오](https://github.com/TYParrot/TimeTravel/assets/89141681/6f9409aa-d5d7-46f9-8ef7-cca8cbf229b6)
+
+#### 전화기 게임
+![전화기](https://github.com/TYParrot/TimeTravel/assets/89141681/59833058-59a6-441c-8808-1492721e3c02)
+
+#### 전자레인지 게임
+![전자레인지](https://github.com/TYParrot/TimeTravel/assets/89141681/8db06250-1618-478a-b2c1-2125adfb9a3c)
+
+### 시나리오 순서도
+https://www.figma.com/design/Nd5b0Rj4o2tqt8ruSO3ySo/%EC%8B%9C%EA%B0%84-%EC%97%AC%ED%96%89-%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4-%EC%88%9C%EC%84%9C%EB%8F%84?node-id=0-1&t=UIMwSwAvMKnT5amP-1
 
 
