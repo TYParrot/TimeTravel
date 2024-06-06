@@ -1,5 +1,7 @@
 # Time Travel VR Project
 
+
+
 ### 프로젝트 목표
 
 이 프로젝트는 한양대학교 에리카 캠퍼스 가상및증강현실프로그래밍 수업의 IC-PBL과제입니다. <br/> <br/> 
@@ -19,6 +21,12 @@
 안산산업역사박물관에서 실제로 관람할 수 있는 전시물 중 가전제품 3가지(전화기, 가스레인지, 라디오)를 선정하여 미니게임을 제작하였습니다.<br/>
 또한, 그 회의 전시물들을 모델로 제작하여 콘텐츠를 이용한 후, 안산산업역사박물관의 전시를 더욱 즐길 수 있을 것을 기대하였습니다.
 <br/> 
+
+### 유니티 버전 및 Oculus 버전
+<br/>
+유니티 버전: 2022.3.20f1.<br/>
+Oculus Integration Version: 57.0.1-deprecated <br/>
+저희는 Meta Quest2 장비를 사용하였습니다.
 
 ### 팀 구성
 
@@ -78,8 +86,4 @@
 ### 시나리오 순서도
 https://www.figma.com/design/Nd5b0Rj4o2tqt8ruSO3ySo/%EC%8B%9C%EA%B0%84-%EC%97%AC%ED%96%89-%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4-%EC%88%9C%EC%84%9C%EB%8F%84?node-id=0-1&t=UIMwSwAvMKnT5amP-1
 
-### 유니티 버전 및 Oculus 버전
-<br/>
-유니티 버전: 2022.3.20f1.<br/>
-Oculus Integration Version: 57.0.1-deprecated <br/>
-저희는 Meta Quest2 장비를 사용하였습니다.
+
