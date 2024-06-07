@@ -66,8 +66,10 @@ Oculus Integration Version: 57.0.1-deprecated <br/>
 #### 하우스-라디오
 ![하우스-라디오](https://github.com/TYParrot/TimeTravel/assets/89141681/16f05b0a-04db-4f2c-8926-7f5bfbe2c382)
 
+
 #### 하우스-전화기
 ![하우스-전화기](https://github.com/TYParrot/TimeTravel/assets/89141681/399a72a3-112c-43b2-9953-50e452fa92c3)
+
 
 #### 하우스-전자레인지
 ![하우스-전자레인지](https://github.com/TYParrot/TimeTravel/assets/89141681/51863e71-1845-40bb-a4a7-460711c1d3b3)
@@ -77,11 +79,20 @@ Oculus Integration Version: 57.0.1-deprecated <br/>
 #### 라디오 게임
 ![라디오](https://github.com/TYParrot/TimeTravel/assets/89141681/6f9409aa-d5d7-46f9-8ef7-cca8cbf229b6)
 
+<br/>라디오 게임은 3단계로 구성됩니다. 빨간색 bar가 초록색 범위에 있을때 사용자가 오른쪽 컨트롤러의 버튼을 누르면 해당 단계가 클리어 됩니다.<br/>
+
+<br/>현재 스테이지를 더 직관적으로 파악할 수 있도록 하기 위해서 라디오 게임 창 위에 라디오 모델을 세 개 위치시켜 놓고 스테이지가 넘어갈 때마다 각 라디오의 색을 흑백에서 칼라로 전환합니다.<br/>
+
+<br/>3단계를 클리어 하면 실제 80년대 라디오 소리가 흘러나옵니다.
 #### 전화기 게임
 ![전화기](https://github.com/TYParrot/TimeTravel/assets/89141681/59833058-59a6-441c-8808-1492721e3c02)
 
+<br/>전화기 게임은 안산의 지역 번호 '0345'로 시작하는 번호를 컨트롤러 버튼을 이용해 클릭하면 게임이 클리어가 됩니다.<br/>
+
 #### 전자레인지 게임
 ![전자레인지](https://github.com/TYParrot/TimeTravel/assets/89141681/8db06250-1618-478a-b2c1-2125adfb9a3c)
+<br/>전자레인지 게임은 컨트롤러를 게이지가 채워질때까지 흔들면 클리어가 됩니다.<br/>
+<br/>음식이 데워지고 있다는 것을 직관적으로 파악하기 위해 컨트롤러를 흔들면 전자레인지에 불빛이 들어오고 음료가 끓는 소리가 잠시 재생됩니다.
 
 ### 시나리오 순서도
 https://www.figma.com/design/Nd5b0Rj4o2tqt8ruSO3ySo/%EC%8B%9C%EA%B0%84-%EC%97%AC%ED%96%89-%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4-%EC%88%9C%EC%84%9C%EB%8F%84?node-id=0-1&t=UIMwSwAvMKnT5amP-1
