@@ -61,8 +61,6 @@ Oculus Integration Version: 57.0.1-deprecated <br/>
 #### 스토리
 ![스토리](https://github.com/TYParrot/TimeTravel/assets/89141681/613e622e-7e92-427d-8b14-873778824f5e)
 
-이렇게 게임을 시작하게 되면 하우스씬으로 들어가게 됩니다. 플레이어는 하우스 내부를 돌아다니며 상호작용 가능한 가전제품을 찾을 수 있습니다.<br/>
-
 #### 하우스-라디오
 ![하우스-라디오](https://github.com/TYParrot/TimeTravel/assets/89141681/16f05b0a-04db-4f2c-8926-7f5bfbe2c382)
 
