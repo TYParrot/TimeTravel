@@ -36,7 +36,7 @@ Oculus Integration Version: 57.0.1-deprecated <br/>
 | 이태윤 | 게임 시스템 설계 및 관리, 모델링 및 3D 자산 제작, 각 씬 환경 디자인, VR 설정 및 최적화 담당 | taeyoon0305@hanyang.ac.kr |
 | 문수인 | 미니게임(전화기) 개발 |anstndls1998@gmail.com |
 | 이수빈 | 미니게임(전자레인지) 개발, 스토리 기획 | dahlia3511@hanyang.ac.kr |
-| 손민지 | UI 디자인, 미니게임(라디오) 개발, 인테리어 배치 | midday2612@hanyang.ac.kr |
+| 손민지 | UI 디자인, 미니게임(라디오) 개발, 인테리어 배치 | thsalswl0912@hanyang.ac.kr |
 
 ### 콘텐츠 스토리
 <br/> 
