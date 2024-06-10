@@ -12,7 +12,7 @@ public class StoryPanel : MonoBehaviour
         foreach (GameObject img in imgs){
             img.SetActive(true);
 
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(8.0f);
             img.SetActive(false);
         }
         gameObject.SetActive(false);

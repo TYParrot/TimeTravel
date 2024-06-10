@@ -15,7 +15,10 @@ public class ButtonInput : MonoBehaviour
 
     public AudioChange AudioScriptInstance;
 
-    public AudioClip clip, clip_clear;
+    public AudioClip clip, clip_clear, all_clear;
+
+    public GameObject num_noBtn;
+    public GameObject num_Btn;
 
     public void Clicked0()
     {
@@ -504,7 +507,10 @@ public class ButtonInput : MonoBehaviour
     {
         if (UiScriptInstance != null)
         {
-            UiScriptInstance.PlayAllClear();
+            num_Btn.SetActive(false);
+            num_noBtn.SetActive(true);
+            AudioPlay(all_clear, 22f);
+            StartCoroutine(afterAllClearAudio());
         }
     }
 
@@ -530,5 +536,10 @@ public class ButtonInput : MonoBehaviour
         {
             AudioScriptInstance.PlayClip(clip, second);
         }
+    }
+
+    IEnumerator afterAllClearAudio(){
+        yield return new WaitForSeconds(22f);
+        UiScriptInstance.PlayAllClear();
     }
 }

@@ -57,7 +57,7 @@ public class ControllerMoving : MonoBehaviour
             distance = Vector3.Distance(transform.position, previousPosition);
             
             if(distance >= 0.08){
-                Controller.SendHapticImpulse(0.5f, 0.3f);
+                Controller.SendHapticImpulse(0.5f, 0.5f);
                 controllerScript.FillGauge();
                 controllerScript.SetIntensity();
             }
