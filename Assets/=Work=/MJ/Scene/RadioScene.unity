@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.020020861, g: 0.027573586, b: 0.050060976, a: 1}
+  m_IndirectSpecularColor: {r: 0.020021107, g: 0.027573904, b: 0.050061602, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1424,7 +1424,7 @@ Transform:
   m_GameObject: {fileID: 164309748}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -11.1, z: 0}
+  m_LocalPosition: {x: 0, y: -11.05, z: 0}
   m_LocalScale: {x: 1.3404253, y: 1.3404253, z: 1.3404253}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2495,7 +2495,7 @@ Transform:
   m_GameObject: {fileID: 314550748}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.05000019, z: 0}
   m_LocalScale: {x: 7.530902, y: 7.530902, z: 7.530902}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2895,7 +2895,7 @@ Transform:
   m_GameObject: {fileID: 347364702}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.05000019, z: 0}
   m_LocalScale: {x: 1.9723, y: 1.9723, z: 1.9723}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3815,8 +3815,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB108\uAC00 \uC815\uD655\uD55C \uD0C0\uC774\uBC0D\uC5D0 \n\uC8FC\uD30C\uC218\uB97C
-    \uBA48\uCDB0\uC8FC\uBA74 \uB3FC!"
+  m_text: "\uB108\uB294 \uC815\uD655\uD55C \uD0C0\uC774\uBC0D\uC5D0\n\uC8FC\uD30C\uC218\uB97C
+    \uBA48\uCDB0\uC918!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87213fd289f6ab242b9d9b8f40452b17, type: 2}
   m_sharedMaterial: {fileID: 6940627489147165802, guid: 87213fd289f6ab242b9d9b8f40452b17,
@@ -5943,7 +5943,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC6B0\uB9AC\uAC00 \uD798\uC744 \uC918\uC11C\n\uC8FC\uD30C\uC218\uB97C
+  m_text: "\uC6B0\uB9AC\uAC00 \uB9C8\uBC95\uC758 \uD798\uC73C\uB85C\n\uC8FC\uD30C\uC218\uB97C
     \uC6C0\uC9C1\uC5EC\uBCFC\uAC8C!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87213fd289f6ab242b9d9b8f40452b17, type: 2}
@@ -8463,7 +8463,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 0.256}
-  m_Center: {x: 0, y: 0, z: 2.25}
+  m_Center: {x: 0, y: 0, z: 2.55}
 --- !u!23 &902989375
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21240,7 +21240,7 @@ Transform:
   m_GameObject: {fileID: 1254694597}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10.2, z: 7}
+  m_LocalPosition: {x: 0.48, y: -10.15, z: 7}
   m_LocalScale: {x: 0.20483828, y: 0.20483828, z: 0.20483828}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33097,7 +33097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.02, y: -3.33}
+  m_AnchoredPosition: {x: 12.02, y: -2.64}
   m_SizeDelta: {x: 956.75, y: 493.99997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1528830291
@@ -43244,7 +43244,7 @@ Transform:
   m_GameObject: {fileID: 1648057115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21999979, y: 1.6107376, z: 6.6333485}
+  m_LocalPosition: {x: -0.21999979, y: 1.6607378, z: 6.6333485}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45111,7 +45111,7 @@ Transform:
   m_GameObject: {fileID: 1882936084}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.3, z: 0}
+  m_LocalPosition: {x: 0.051, y: -2.55, z: -0.148}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47049,7 +47049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2053486651
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47684,7 +47684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2094835500
 RectTransform:
   m_ObjectHideFlags: 0

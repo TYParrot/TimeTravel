@@ -74,7 +74,7 @@ public class UI_Radio : MonoBehaviour
             msg.SetActive(true); // 메시지 활성화
 
             // 재생 후 대기
-            yield return new WaitForSeconds(5.0f); // 재생 시간
+            yield return new WaitForSeconds(6.0f); // 재생 시간
             
             if(!playAllClear){
                 msg.SetActive(false); // 메시지 비활성화
@@ -86,7 +86,7 @@ public class UI_Radio : MonoBehaviour
         if(!isItStart){
             isItStart = true;
             ExplainPanel.SetActive(true);
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(8.0f);
             Mascot.SetActive(true);
             RightHand.SetActive(true);
             LeftHand.SetActive(true);
@@ -97,7 +97,7 @@ public class UI_Radio : MonoBehaviour
     }
 
     IEnumerator ShowGoHomeBtn(){
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(5.0f);
         GoHomeBtn.SetActive(true);
     }
 

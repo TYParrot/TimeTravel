@@ -69,7 +69,7 @@ public class UI_Telephone : MonoBehaviour
             msg.SetActive(true); // 메시지 활성화
 
             // 재생 후 대기
-            yield return new WaitForSeconds(5.0f); // 재생 시간
+            yield return new WaitForSeconds(6.0f); // 재생 시간
             msg.SetActive(false); // 메시지 비활성화
         }
 
@@ -78,7 +78,7 @@ public class UI_Telephone : MonoBehaviour
         if(!isItStart){
             isItStart = true;
             ExplainPanel.SetActive(true);
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(8.0f);
             Telephone_Btn.SetActive(true);
             Telephone_NoBtn.SetActive(false);
             Mascoat.SetActive(true);
