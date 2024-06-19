@@ -70,5 +70,8 @@ Oculus Integration Version: 57.0.1-deprecated
 > > > TY(시스템, 인테리어 관련 모든 리소스)
 
 
+## 세부 코드 내용
+더 자세한 세부 코드 설명은 [DeveloperNotion](https://www.notion.so/06b29314b25a4c9fab9cf6bb61b235f4?pvs=4)에서 살펴볼 수 있습니다. 
+
 ## 기타 문의사항
 이태윤 (taeyoon0305@hanyang.ac.kr)
