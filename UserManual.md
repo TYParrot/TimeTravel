@@ -63,4 +63,4 @@
 이러한 유의사항을 지키면 VR을 더욱 안전하고 쾌적하게 즐길 수 있습니다.
 
 ### 사용자 매뉴얼 가이드북 
-사용 방법은 [UserNotion](https://www.notion.so/5d03911ead194a738e61a8a18c827898?pvs=4)에서 확인할 수 있습니다.
+사용 방법은 [UserNotion](https://electric-scarf-ff3.notion.site/5d03911ead194a738e61a8a18c827898?pvs=4)에서 확인할 수 있습니다.
