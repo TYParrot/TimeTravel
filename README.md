@@ -95,4 +95,8 @@ Oculus Integration Version: 57.0.1-deprecated <br/>
 ### 시나리오 순서도
 https://www.figma.com/design/Nd5b0Rj4o2tqt8ruSO3ySo/%EC%8B%9C%EA%B0%84-%EC%97%AC%ED%96%89-%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4-%EC%88%9C%EC%84%9C%EB%8F%84?node-id=0-1&t=UIMwSwAvMKnT5amP-1
 
+### 매뉴얼
+#### 개발자 매뉴얼: DeveloperManual.md
+#### 사용자 매뉴얼 : UserManual.md
+
 
