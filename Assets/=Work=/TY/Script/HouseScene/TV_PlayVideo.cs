@@ -23,9 +23,9 @@ public class TV_PlayVideo : MonoBehaviour
     }
 
     private void CountClearGame(){
-        if(Managers.Game.ReturnRadio()) ClearGameCount++;
-        if(Managers.Game.ReturnMicrowave()) ClearGameCount++;
-        if(Managers.Game.ReturnTelephone()) ClearGameCount++;
+        if(Managers.Scenario.ReturnRadio()) ClearGameCount++;
+        if(Managers.Scenario.ReturnMicrowave()) ClearGameCount++;
+        if(Managers.Scenario.ReturnTelephone()) ClearGameCount++;
     }
 
 }
