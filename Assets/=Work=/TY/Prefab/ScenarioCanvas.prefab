@@ -1255,6 +1255,8 @@ MonoBehaviour:
   TelephonePanel: {fileID: 8122384378552763016}
   AllClearPanel: {fileID: 6719456354674053575}
   GoHomeBtn: {fileID: 0}
+  particle: {fileID: 0}
+  AllClearSkyBox: {fileID: 0}
 --- !u!1 &7258329252176651021
 GameObject:
   m_ObjectHideFlags: 0
