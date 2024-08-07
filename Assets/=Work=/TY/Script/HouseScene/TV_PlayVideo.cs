@@ -19,7 +19,7 @@ public class TV_PlayVideo : MonoBehaviour
         }
 
         gameObject.GetComponent<VideoPlayer>().playbackSpeed = PlaySpeed;
-        Debug.Log(gameObject.GetComponent<VideoPlayer>().playbackSpeed);
+        gameObject.GetComponent<VideoPlayer>().Play();
     }
 
     private void CountClearGame(){

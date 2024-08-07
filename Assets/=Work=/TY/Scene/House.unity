@@ -30989,6 +30989,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2041903398}
+    - targetCorrespondingSourceObject: {fileID: 1203254815119306754, guid: ea104425444b0b24c9846b71c60428e5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2041903399}
   m_SourcePrefab: {fileID: 100100000, guid: ea104425444b0b24c9846b71c60428e5, type: 3}
 --- !u!4 &2041903394 stripped
 Transform:
@@ -31140,6 +31144,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2041903399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041903395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055bc4c0fa4037d43aee80902435b28b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2052104102
 GameObject:
   m_ObjectHideFlags: 0
@@ -32474,8 +32490,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 58
+  m_fontSizeBase: 58
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
