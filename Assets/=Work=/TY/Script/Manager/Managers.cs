@@ -16,10 +16,6 @@ public class Managers : Game.Helpers.Singleton<Managers>
     void Start()
     {
         DontDestroyOnLoad(this);
-        
-        // 해상도 스케일 조정
-        XRSettings.eyeTextureResolutionScale = 1.5f;
-        Application.targetFrameRate = 120;
 
     }
 

@@ -7299,7 +7299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
+  m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -7310,11 +7310,11 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 1
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
   m_AntialiasingQuality: 2
-  m_StopNaN: 1
-  m_Dithering: 1
+  m_StopNaN: 0
+  m_Dithering: 0
   m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_AllowHDROutput: 1
@@ -7389,7 +7389,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 300
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -15819,6 +15819,7 @@ GameObject:
   - component: {fileID: 1085320389}
   - component: {fileID: 1085320391}
   - component: {fileID: 1085320390}
+  - component: {fileID: 1085320392}
   m_Layer: 0
   m_Name: WindowWall (1)
   m_TagString: Untagged
@@ -15891,6 +15892,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085320388}
   m_Mesh: {fileID: 1101853193227830674, guid: b9b0a3a2d2ef9164e9efe2f1de08e5d9, type: 3}
+--- !u!65 &1085320392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085320388}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000002, y: 2.0000026, z: 2}
+  m_Center: {x: 0.00000047683716, y: 0.0000076293945, z: -0.00000011920929}
 --- !u!1 &1086466373
 GameObject:
   m_ObjectHideFlags: 0
@@ -27955,6 +27977,7 @@ GameObject:
   - component: {fileID: 1885582882}
   - component: {fileID: 1885582884}
   - component: {fileID: 1885582883}
+  - component: {fileID: 1885582885}
   m_Layer: 0
   m_Name: WindowWall (1)
   m_TagString: Untagged
@@ -28029,6 +28052,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885582881}
   m_Mesh: {fileID: 1101853193227830674, guid: b9b0a3a2d2ef9164e9efe2f1de08e5d9, type: 3}
+--- !u!65 &1885582885
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885582881}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000002, y: 2.0000026, z: 2}
+  m_Center: {x: 0.00000047683716, y: 0, z: 0}
 --- !u!1 &1888620584
 GameObject:
   m_ObjectHideFlags: 0
@@ -30456,7 +30500,7 @@ Transform:
   m_GameObject: {fileID: 2021189751}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.50048375, z: -0, w: 0.86574596}
-  m_LocalPosition: {x: 0.23, y: 2, z: 15.88}
+  m_LocalPosition: {x: 28.74, y: 2, z: 15.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45396,6 +45440,7 @@ GameObject:
   - component: {fileID: 7296796169121532235}
   - component: {fileID: 7586970222816982643}
   - component: {fileID: 647324346255432450}
+  - component: {fileID: 7586970222816982644}
   m_Layer: 0
   m_Name: WindowWall
   m_TagString: Untagged
@@ -54568,6 +54613,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4083118847208898259}
   m_Mesh: {fileID: 1101853193227830674, guid: b9b0a3a2d2ef9164e9efe2f1de08e5d9, type: 3}
+--- !u!65 &7586970222816982644
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4083118847208898259}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000002, y: 2.0000026, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7591445449118933180
 MonoBehaviour:
   m_ObjectHideFlags: 0
