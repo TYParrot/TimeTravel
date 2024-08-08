@@ -16,6 +16,8 @@ public class TV_PlayVideo : MonoBehaviour
 
         if(ClearGameCount != 0){
             PlaySpeed = Mathf.Round(10f / ClearGameCount) / 10f;
+        }else{
+            PlaySpeed = 0;
         }
 
         gameObject.GetComponent<VideoPlayer>().playbackSpeed = PlaySpeed;
