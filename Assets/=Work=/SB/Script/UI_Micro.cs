@@ -72,7 +72,7 @@ public class UI_Micro : MonoBehaviour
             isItStart = true;
             ExplainPanel.SetActive(true);
             yield return new WaitForSeconds(8.0f);
-                if(introPlaying){
+            if(introPlaying){
                 introPlaying = false;
             }
         }

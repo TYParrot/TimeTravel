@@ -161,7 +161,7 @@ namespace Game
         }
 
         private void FindPlayer(){
-            //시뮬레이터를 player로 설정해놨음. 추후에 변경해야함.
+            //시뮬레이터를 player로 설정해놨음.
             player = GameObject.Find("XR Origin (XR Rig)");
             Debug.Log("플레이어 확인");
         }

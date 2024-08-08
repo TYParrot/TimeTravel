@@ -16,16 +16,18 @@ public class TV_PlayVideo : MonoBehaviour
 
         if(ClearGameCount != 0){
             PlaySpeed = Mathf.Round(10f / ClearGameCount) / 10f;
+        }else{
+            PlaySpeed = 0;
         }
 
         gameObject.GetComponent<VideoPlayer>().playbackSpeed = PlaySpeed;
-        Debug.Log(gameObject.GetComponent<VideoPlayer>().playbackSpeed);
+        gameObject.GetComponent<VideoPlayer>().Play();
     }
 
     private void CountClearGame(){
-        if(Managers.Game.ReturnRadio()) ClearGameCount++;
-        if(Managers.Game.ReturnMicrowave()) ClearGameCount++;
-        if(Managers.Game.ReturnTelephone()) ClearGameCount++;
+        if(Managers.Scenario.ReturnPlayRadio()) ClearGameCount++;
+        if(Managers.Scenario.ReturnPlayMicrowave()) ClearGameCount++;
+        if(Managers.Scenario.ReturnPlayTelephone()) ClearGameCount++;
     }
 
 }

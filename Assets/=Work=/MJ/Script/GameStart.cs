@@ -1,17 +1,10 @@
 using UnityEngine;
 
-public class ClickableObject : MonoBehaviour
+public class GameStart : MonoBehaviour
 {
-    private void OnMouseDown()
+    void Start()
     {
-        GameObject gameRuleObject = GameObject.Find("game_rule_scene");
-        if (gameRuleObject != null)
-        {
-            gameRuleObject.SetActive(false);
-        }
-        else
-        {
-            Debug.LogError("game_rule 오브젝트를 찾을 수 없습니다.");
-        }
+        // 게임 오브젝트의 위치를 (0, 2.3, 0.5)로 설정
+        transform.position = new Vector3(0, 2.3f, 0.5f);
     }
 }
