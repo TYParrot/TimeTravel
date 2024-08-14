@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.555459, g: 0.50529265, b: 0.38059366, a: 1}
+  m_IndirectSpecularColor: {r: 0.55224496, g: 0.5045177, b: 0.37643015, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18820,7 +18820,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uC548\uB155!\n\uC6B0\uB9AC\uB294 1987\uB144\uC5D0 \uC0B4\uACE0 \uC788\uB294
-    \uC694\uC815 \n\uC548\uC774, \uC0B0\uC774, \uBC15\uC774\uC57C!\n\uB108\uAC00
+    \uC694\uC815 \n\uC544\uB2C8, \uC0AC\uB2C8, \uBC14\uAE30\uC57C!\n\uB108\uAC00
     \uC640\uC11C \uC5BC\uB9C8\uB098 \uB2E4\uD589\uC778\uC9C0 \uBAB0\uB77C!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87213fd289f6ab242b9d9b8f40452b17, type: 2}
@@ -33686,13 +33686,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8122284126623102711}
-  m_LocalRotation: {x: -0.000000059604638, y: 0.12027485, z: -0.0000003650784, w: 0.99274063}
+  m_LocalRotation: {x: 0.00000036880368, y: 0.9927406, z: -0.000000059604638, w: -0.120275185}
   m_LocalPosition: {x: 0, y: 0, z: -24}
   m_LocalScale: {x: 0.7011885, y: 0.7011885, z: 0.7011885}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 506798763716105285}
-  m_LocalEulerAnglesHint: {x: 0, y: 13.816, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 193.816, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 39, y: 1}
@@ -51749,7 +51749,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!4 &6580276324547065302
 Transform:
   m_ObjectHideFlags: 0
